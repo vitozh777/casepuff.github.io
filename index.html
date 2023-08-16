@@ -51,32 +51,32 @@
 
 
 
-        <form id="form1">
+        <form id="form1" class="hidden">
             <div class="product-details">
                 <img src="BLACKPUFF2.PNG" alt="" class="img2">
                 <div class="namecase2">THE PUFFER CASE-BLACK</div>
                 <div class="price2">1699₽-2099₽</div>
                 <div class="p">Выберите модель телефона:</div>
                 <div class="models">
-                    <div class="model1">iPhone 14 Pro Max</div>
-                    <div class="model1">iPhone 14 Pro</div>
-                    <div class="model1">iPhone 14 Plus</div>
-                    <div class="model1">iPhone 14 </div>
-                    <div class="model1">iPhone 13 Pro Max</div>
-                    <div class="model1">iPhone 13 Pro</div>
-                    <div class="model1">iPhone 13</div>
-                    <div class="model1">iPhone 13 mini</div>
-                    <div class="model1">iPhone 12 Pro Max</div>
-                    <div class="model1">iPhone 12/12 Pro</div>
-                    <div class="model1">iPhone 12 mini</div>
-                    <div class="model1">iPhone 11 Pro Max</div>
-                    <div class="model1">iPhone 11 Pro</div>
-                    <div class="model1">iPhone 11</div>
-                    <div class="model1">iPhone Xs Max</div>
-                    <div class="model1">iPhone Xr</div>
-                    <div class="model1">iPhone X/Xs</div>
-                    <div class="model1">iPhone 8 Plus/7 Plus</div>
-                    <div class="model1">iPhone 6/7/8/SE20</div>
+                    <button class="model1">iPhone 14 Pro Max</button>
+                    <button class="model1">iPhone 14 Pro</button>
+                    <button class="model1">iPhone 14 Plus</button>
+                    <button class="model1">iPhone 14</button>
+                    <button class="model1">iPhone 13 Pro Max</button>
+                    <button class="model1">iPhone 13 Pro</button>
+                    <button class="model1">iPhone 13</button>
+                    <button class="model1">iPhone 13 mini</button>
+                    <button class="model1">iPhone 12 Pro Max</button>
+                    <button class="model1">iPhone 12/12 Pro</button>
+                    <button class="model1">iPhone 12 mini</button>
+                    <button class="model1">iPhone 11 Pro Max</button>
+                    <button class="model1">iPhone 11 Pro</button>
+                    <button class="model1">iPhone 11</button>
+                    <button class="model1">iPhone Xs Max</button>
+                    <button class="model1">iPhone Xr</button>
+                    <button class="model1">iPhone X/Xs</button>
+                    <button class="model1">iPhone 8 Plus/7 Plus</button>
+                    <button class="model1">iPhone 6/7/8/SE20</button>
                 </div>
             </div>
             <button id="order">Заказать</button>
@@ -89,12 +89,68 @@
             let tg = window.Telegram.WebApp;
             let btn1 = document.getElementById("btn1")
             let order = document.getElementById("order")
+            let sizes = document.querySelectorAll(".size");
+            let models = document.querySelectorAll(".model1");
+            let priceElement = document.querySelector(".price2");
+            let form1 = document.getElementById("form1");
 
             btn1.addEventListener("click", () => {
                 document.getElementById("home").style.display = "none"
                 document.getElementById("form1").style.display = "block"
 
             });
+
+            models.forEach(model => {
+                model.addEventListener("click", (event) => {
+                    event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    const selectedModel = model.textContent;
+                    // Здесь вы можете добавить логику для обновления цены в зависимости от модели
+                    if (selectedModel === "iPhone 14 Pro Max") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone 14 Pro") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 14 Plus") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone 14") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 13 Pro Max") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone 13 Pro") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 13") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 13 mini") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 12 Pro Max") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone 12/12 Pro") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 12 mini") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 11 Pro Max") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone 11 Pro") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 11") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone Xs Max") {
+                        priceElement.textContent = "2099₽";
+                    } else if (selectedModel === "iPhone Xr") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone X/Xs") {
+                        priceElement.textContent = "1899₽";
+                    } else if (selectedModel === "iPhone 8 Plus/7 Plus") {
+                        priceElement.textContent = "1699₽";
+                    } else if (selectedModel === "iPhone 6/7/8/SE20") {
+                        priceElement.textContent = "1699₽";
+                    }
+                    
+                    // ... и так далее для остальных моделей
+                });
+            });
+
+
+
         </script>
 
 
