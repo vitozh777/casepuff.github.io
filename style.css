@@ -5,11 +5,15 @@ body {
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
     min-height: 100vh;
+    font-weight: 400px;
 }
 
 .container {
     max-width: 400px;
     overflow: hidden;
+    display: flex;
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center;
 }
 
 .inner {
@@ -26,6 +30,7 @@ body {
 
 .item {
     text-align: center;
+    overflow: hidden;
 }
 
 .btn {
