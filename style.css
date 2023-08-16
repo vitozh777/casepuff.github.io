@@ -26,6 +26,7 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 20px; /* Интервал между строками */
     margin: 20px 0;
+    overflow: hidden;
 }
 
 .img {
@@ -49,4 +50,25 @@ body {
     background-color:black;
     border-radius: 0 0 5px 5px;
     color: white;
+}
+
+.price {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 11px; /* Отступ сверху */
+    margin-bottom: 3px; /* Отступ снизу */
+    text-align: left;
+}
+
+.namecase {
+    font-size: 12px;
+    color: rgb(110, 110, 110);
+    text-align: left;
+    word-wrap: break-word; /* Обрыв длинных слов */
+    max-height: 2em; /* Ограничение высоты элемента на 3 строки */
+    overflow: hidden; /* Скрытие избыточного текста */
+    height: 50px;
+    font-weight: 175px;
+    box-sizing: border-box;
 }
