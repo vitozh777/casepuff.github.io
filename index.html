@@ -51,20 +51,18 @@
 
 
 
-        <form id="form">
-            <h2>Информация о товаре</h2>
+        <form id="form1">
             <div class="product-details">
-                <div class="image">
-                    <img src="product-image.jpg" alt="Товар">
-                </div>
+                <img src="BLACKPUFF2.PNG" alt="" class="img2">
+                <div class="namecase2">THE PUFFER CASE-BLACK</div>
+                <div class="price2">1699₽-2099₽</div>
+                <div class="p">Выберите модель телефона:</div>
                 <div class="info">
-                    <p>Выберите размер:</p>
                     <select id="size" onchange="updatePrice()">
                         <option value="small">Маленький</option>
                         <option value="medium">Средний</option>
                         <option value="large">Большой</option>
                     </select>
-                    <p>Цена: <span id="price">$99.99</span></p>
                 </div>
             </div>
             <button id="order">Заказать</button>
@@ -80,7 +78,7 @@
 
             btn1.addEventListener("click", () => {
                 document.getElementById("home").style.display = "none"
-                document.getElementById("form").style.display = "block"
+                document.getElementById("form1").style.display = "block"
 
             });
         </script>
