@@ -15,7 +15,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    grid-gap: 10px;
+    grid-gap: 1px;
     margin: 20px 10px;
 }
 
@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 190px;
+    width: 200px;
     height: 40px;
     padding: 10px 10px;
     margin: 10px;
