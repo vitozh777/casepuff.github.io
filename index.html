@@ -104,6 +104,15 @@
                 model.addEventListener("click", (event) => {
                     event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     const selectedModel = model.textContent;
+
+                    // Удаляем границу у всех кнопок
+                    models.forEach(btn => {
+                        btn.style.border = "none";
+                    });
+                    
+                    // Обновляем стиль выбранной кнопки
+                    model.style.border = "1px solid black";
+
                     // Здесь вы можете добавить логику для обновления цены в зависимости от модели
                     if (selectedModel === "iPhone 14 Pro Max") {
                         priceElement.textContent = "2099₽";
