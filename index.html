@@ -41,64 +41,59 @@
                 </div>
             </div>
         </div>
-    
+
+
+
+
+
+
+
+
+
+
+        <form id="form">
+            <h2>Информация о товаре</h2>
+            <div class="product-details">
+                <div class="image">
+                    <img src="product-image.jpg" alt="Товар">
+                </div>
+                <div class="info">
+                    <p>Выберите размер:</p>
+                    <select id="size" onchange="updatePrice()">
+                        <option value="small">Маленький</option>
+                        <option value="medium">Средний</option>
+                        <option value="large">Большой</option>
+                    </select>
+                    <p>Цена: <span id="price">$99.99</span></p>
+                </div>
+            </div>
+            <button id="order">Заказать</button>
+        </form>
+
+        <script>
+            let tg = window.Telegram.WebApp;
+            let btn1 = document.getElementById("btn1")
+            let order = document.getElementById("order")
+
+            btn1.addEventListener("click", () => {
+                document.getElementById("container").style.display = "none"
+                document.getElementById("form").style.display = "block"
+                
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-
-
-
-
-        
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Информация о товаре</h2>
-                <div class="product-details">
-                    <div class="image">
-                        <img src="product-image.jpg" alt="Товар">
-                    </div>
-                    <div class="info">
-                        <p>Выберите размер:</p>
-                        <select id="size" onchange="updatePrice()">
-                            <option value="small">Маленький</option>
-                            <option value="medium">Средний</option>
-                            <option value="large">Большой</option>
-                        </select>
-                        <p>Цена: <span id="price">$99.99</span></p>
-                    </div>
-                </div>
-                <button class="btn" onclick="order()">Заказать товар</button>
-            </div>
-        </div>
-    
-        <script>
-            function openModal() {
-                document.getElementById("myModal").style.display = "block";
-            }
-    
-            function closeModal() {
-                document.getElementById("myModal").style.display = "none";
-            }
-    
-            function updatePrice() {
-                const size = document.getElementById("size").value;
-                let price = 0;
-                if (size === "small") {
-                    price = 79.99;
-                } else if (size === "medium") {
-                    price = 89.99;
-                } else if (size === "large") {
-                    price = 99.99;
-                }
-                document.getElementById("price").textContent = "$" + price.toFixed(2);
-            }
-    
-            function order() {
-                // Дополнительная логика для оформления заказа
-                alert("Товар заказан!");
-                closeModal();
-            }
-        </script>
 
 
     </body>
