@@ -20,7 +20,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    margin: 20px 5px;
+    grid-column-gap: 8px;
+    margin: 20px 0;
 }
 
 .img {
@@ -38,9 +39,9 @@ body {
     justify-content: center;
     align-items: center;
     width: 175px;
-    height: 40px;
+    height: 30px;
     padding: 10px 10px;
-    margin: 10px;
+    margin: 0;
     background-color: black;
     border-radius: 0 0 5px 5px;
     color: #fff;
