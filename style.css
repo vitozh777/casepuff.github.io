@@ -31,10 +31,8 @@ body {
     width: 190px;
     height: 30px;
     padding: 10px 10px;
-    background: black;
+    margin: 5px;
+    background-color: black;
     border-radius: 0 0 5px 5px;
     color: #fff;
-    text-transform: uppercase;
-
-    transition: backround .2s linear;
 }
