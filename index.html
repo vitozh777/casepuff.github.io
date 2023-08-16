@@ -11,7 +11,7 @@
 
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="home">
             <div class="inner">
                 <div class="item">
                     <img src="BLACKPUFF.PNG" alt="" class="img">
@@ -70,15 +70,18 @@
             <button id="order">Заказать</button>
         </form>
 
+
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
         <script>
             let tg = window.Telegram.WebApp;
             let btn1 = document.getElementById("btn1")
             let order = document.getElementById("order")
 
             btn1.addEventListener("click", () => {
-                document.getElementById("container").style.display = "none"
+                document.getElementById("home").style.display = "none"
                 document.getElementById("form").style.display = "block"
-                
+
             });
         </script>
 
@@ -92,7 +95,6 @@
 
 
 
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 
 
