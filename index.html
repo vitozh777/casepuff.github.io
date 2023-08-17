@@ -178,28 +178,38 @@
             
             
             
-            // Настройка кнопки назад
-            let backButton = window.Telegram.WebApp.BackButton;
-            
-            // Опционально: настройте стили кнопки
-            backButton.style.backgroundColor = "#007bff"; // Цвет фона (синий)
-            backButton.style.color = "white"; // Цвет текста (белый)
-            backButton.style.borderRadius = "10px"; // Скругление углов
-            
+
+
+
             document.addEventListener("DOMContentLoaded", function () {
                 let form1 = document.getElementById("form1");
                 let backButtonElement = document.getElementById("backButton");
                 
+                // Сохраняем URL предыдущей страницы
+                let previousPageUrl = null;
+                
+                // Функция для сохранения URL страницы при открытии формы
+                function savePreviousPageUrl() {
+                    previousPageUrl = window.location.href;
+                }
+                
+                // Функция для возврата на предыдущую страницу
+                function goBack() {
+                    if (previousPageUrl) {
+                        window.location.href = previousPageUrl;
+                    } else {
+                        window.history.back();
+                    }
+                }
+                
                 // Показать кнопку "Назад" при открытии окошка "form1"
                 form1.addEventListener("click", function () {
                     backButton.show();
+                    savePreviousPageUrl();
                 });
-
+                
                 // Настройте обработчик нажатия кнопки "Назад"
-                backButton.onClick(function () {
-                    // Вернуться на предыдущую страницу
-                    window.history.back();
-                });
+                backButton.onClick(goBack);
                 
                 // Скрыть кнопку "Назад" при закрытии окошка "form1"
                 form1.addEventListener("transitionend", function (event) {
@@ -208,6 +218,7 @@
                     }
                 });
             });
+
 
 
             
