@@ -124,8 +124,6 @@
                         <!-- Добавьте дополнительные слайды с изображениями по аналогии -->
                     </div>
 
-                    <div class="swiper-scrollbar"></div>
-                    
                 </div>
                 <div class="namecase2">THE PUFFER CASE-BLACK</div>
                 <div class="price2">1699₽-2099₽</div>
@@ -174,6 +172,7 @@
             let models = document.querySelectorAll(".model1");
             let priceElement = document.querySelector(".price2");
             let form1 = document.getElementById("form1");
+            let homeContent = document.getElementById("home");
 
             btn1.addEventListener("click", () => {
                 document.getElementById("home").style.display = "none"
@@ -183,6 +182,21 @@
 
 
 
+            });
+
+
+            var BackButton = WebApp.BackButton;
+            
+            BackButton.onClick(function() {
+                WebApp.showAlert("Нет пути назад!"); // Показываем сообщение при нажатии на кнопку "Назад"
+                form1.style.display = "none"; // Скрываем форму
+                homeContent.style.display = "block"; // Отображаем домашний контент
+                BackButton.show(); // Показываем кнопку "Назад" снова
+            });
+            
+            WebApp.onEvent('backButtonClicked', function() {
+                // Ваш код обработки события 'backButtonClicked' (если необходимо)
+                // Например, можно добавить дополнительную логику при нажатии кнопки "Назад" в приложении
             });
             
             
@@ -264,10 +278,6 @@
                 slidesPerView: 'auto',
                 spaceBetween: 10,
                 centeredSlides: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar', // Указываем элемент для полосы прокрутки
-                    draggable: true, // Позволяет пользователю перемещать полосу прокрутки
-                }
             });
 
 

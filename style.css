@@ -173,9 +173,6 @@ form {
     opacity: 0; /* Скрыть полосу прокрутки изначально */
     transition: opacity 0.2s ease-in-out;
 }
-.swiper-scrollbar:hover {
-    opacity: 1; /* Показать полосу прокрутки при наведении */
-}
 
 
 .order {
