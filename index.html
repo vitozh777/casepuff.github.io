@@ -175,19 +175,34 @@
 
 
             });
-
-            // Получите объект BackButton
+            
+            
+            
             let backButton = window.Telegram.WebApp.BackButton;
             
-            // Настройте обработчик нажатия кнопки
-            backButton.onClick(function() {
-                // Ваш код для обработки нажатия кнопки "Назад" здесь
-                // Например, переход на предыдущую страницу
-                window.history.back();
+            document.addEventListener("DOMContentLoaded", function () {
+                let form1 = document.getElementById("form1");
+                let backButtonElement = document.getElementById("backButton");
+                
+                // Показать кнопку "Назад" при открытии окошка "form1"
+                form1.addEventListener("click", function () {
+                    backButton.show();
+                });
+                
+                // Настройте обработчик нажатия кнопки "Назад"
+                backButton.onClick(function () {
+                    // Вернуться на предыдущую страницу
+                    window.history.back();
+                });
+                
+                // Скрыть кнопку "Назад" при закрытии окошка "form1"
+                form1.addEventListener("transitionend", function (event) {
+                    if (event.propertyName === "opacity" && getComputedStyle(form1).opacity === "0") {
+                        backButton.hide();
+                    }
+                });
             });
-            
-            // Показать кнопку
-            backButton.show();
+
             
             
             
