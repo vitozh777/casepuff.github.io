@@ -215,18 +215,10 @@
 
 
 
-            
-            
-            
+            const addToBagBtn = document.getElementById('order1');
 
 
 
-
-
-
-            
-            
-            
 
 
 
@@ -234,6 +226,7 @@
             models.forEach(model => {
                 model.addEventListener("click", (event) => {
                     event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
                     const selectedModel = model.textContent;
 
                     // Удаляем границу у всех кнопок
@@ -243,6 +236,8 @@
                     
                     // Обновляем стиль выбранной кнопки
                     model.style.border = "1px solid black";
+
+                    addToBagBtn.removeAttribute("disabled");
 
                     // Здесь вы можете добавить логику для обновления цены в зависимости от модели
                     if (selectedModel === "iPhone 14 Pro Max") {
@@ -287,6 +282,13 @@
                     
                     // ... и так далее для остальных моделей
                 });
+            });
+
+            // Добавьте обработчик события click для кнопки "Add to Bag"
+            addToBagBtn.addEventListener("click", () => {
+                // Здесь вы можете добавить код для обработки добавления в корзину
+                // Например, отправка данных на сервер или отображение сообщения
+                // о добавлении в корзину.
             });
 
 
