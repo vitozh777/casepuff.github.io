@@ -144,6 +144,7 @@
                 </div>
             </div>
             <button class="order" id="order1">Add to Bag</button>
+            <p></p>
         </form>
 
 
@@ -170,30 +171,23 @@
                 document.getElementById("form1").style.display = "block"
 
 
-                tg.ready(function() {
-                    tg.setIcon({ menu: true });
-                    
-                    // Показываем кнопку "Назад" в верхнем меню
-                    var BackButton = WebApp.BackButton;
-                    BackButton.show();
-                    
-                    // Обработчик нажатия на кнопку "Назад"
-                    BackButton.onClick(function() {
-                        document.getElementById("home").style.display = "block";
-                        document.getElementById("form1").style.display = "none";
-                        
-                        tg.ready(function() {
-                            tg.setIcon({ menu: true });
-                            
-                            // Скрываем кнопку "Назад"
-                            BackButton.hide();
-                        });
-                    });
-                });
 
 
 
             });
+
+            // Получите объект BackButton
+            let backButton = window.Telegram.WebApp.BackButton;
+            
+            // Настройте обработчик нажатия кнопки
+            backButton.onClick(function() {
+                // Ваш код для обработки нажатия кнопки "Назад" здесь
+                // Например, переход на предыдущую страницу
+                window.history.back();
+            });
+            
+            // Показать кнопку
+            backButton.show();
             
             
             
