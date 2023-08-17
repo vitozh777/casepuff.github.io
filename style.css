@@ -234,10 +234,9 @@ form {
 
 
 #mainButtonContainer {
-    position: fixed;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
+    top: 10px; /* Расстояние сверху */
+    right: 10px; /* Расстояние справа */
     display: none;
 }
 
@@ -245,11 +244,16 @@ form {
     background-color: #009933; /* Зеленый фон */
     color: white; /* Белый цвет текста */
     border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
+    border-radius: 50%; /* Делаем круглую форму */
+    width: 60px;
+    height: 60px;
     font-size: 18px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .disabled {
     opacity: 0.5;
