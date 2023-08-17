@@ -123,6 +123,9 @@
                         </div>
                         <!-- Добавьте дополнительные слайды с изображениями по аналогии -->
                     </div>
+
+                    <div class="swiper-scrollbar"></div>
+                    
                 </div>
                 <div class="namecase2">THE PUFFER CASE-BLACK</div>
                 <div class="price2">1699₽-2099₽</div>
@@ -256,12 +259,15 @@
             });
 
 
-            // Инициализация Swiper.js
+            // Инициализация Swiper.js с опцией scrollbar: true
             const swiper = new Swiper('.swiper-container', {
-                // Опции Swiper.js
-                slidesPerView: 'auto', // Количество видимых слайдов
-                spaceBetween: 10, // Расстояние между слайдами
-                centeredSlides: true, // Центрирование активного слайда
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                centeredSlides: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar', // Указываем элемент для полосы прокрутки
+                    draggable: true, // Позволяет пользователю перемещать полосу прокрутки
+                }
             });
 
 

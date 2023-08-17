@@ -162,6 +162,22 @@ form {
     width: 100%;
 }
 
+.swiper-scrollbar {
+    position: absolute;
+    width: 4px; /* Ширина полосы прокрутки */
+    height: 100%; /* Высота полосы прокрутки */
+    background-color: rgba(0, 0, 0, 0.3); /* Цвет полосы прокрутки */
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0; /* Скрыть полосу прокрутки изначально */
+    transition: opacity 0.2s ease-in-out;
+}
+.swiper-scrollbar:hover {
+    opacity: 1; /* Показать полосу прокрутки при наведении */
+}
+
+
 .order {
     display: flex;
     justify-content: center;
