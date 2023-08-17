@@ -232,16 +232,28 @@ form {
 }
 
 
-.mainButtonContainer {
+#mainButtonContainer {
     display: none;
-    text-align: center; /* Выравнивание по центру */
-    margin-top: 20px; /* Отступ сверху */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.mainbutton {
-    background-color: green;
+#mainbutton {
+    background-color: #34B7F1; /* Синий цвет */
     color: white;
     padding: 10px 20px;
     border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mainbutton:hover {
+    background-color: #2784C5; /* Синий цвет при наведении */
+    transform: scale(1.05);
 }

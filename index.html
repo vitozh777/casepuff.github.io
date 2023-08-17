@@ -185,8 +185,8 @@
 
 
 
-        <div id="mainButtonContainer" style="display: none;">
-            <button id="mainbutton">Main Button</button>
+        <div id="mainButtonContainer">
+            <button id="mainbutton">MainButton</button>
         </div>
 
 
@@ -222,7 +222,6 @@
 
 
             const addToBagBtn = document.getElementById('order1');
-            const mainButton = document.getElementById('mainbutton');
             const mainButtonContainer = document.getElementById('mainButtonContainer');
 
 
@@ -295,15 +294,14 @@
 
             // Добавьте обработчик события click для кнопки "Add to Bag"
             addToBagBtn.addEventListener("click", () => {
+                // Показываем контейнер с главной кнопкой
+                mainButtonContainer.style.display = 'block'
+
                 // Здесь вы можете добавить код для обработки добавления в корзину
                 // Например, отправка данных на сервер или отображение сообщения
                 // о добавлении в корзину.
             });
 
-            mainButton.addEventListener("click", () => {
-                document.getElementById("home").style.display = "none";
-                document.getElementById("form1").style.display = "block";
-            });
 
 
             // Инициализация Swiper.js с опцией scrollbar: true
