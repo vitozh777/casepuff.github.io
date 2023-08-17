@@ -97,8 +97,6 @@
 
 
 
-        
-        <button id="backButton" class="back-button">Назад</button>
 
 
 
@@ -189,43 +187,6 @@
 
 
 
-            document.addEventListener("DOMContentLoaded", function () {
-                let form1 = document.getElementById("form1");
-                let backButtonElement = document.getElementById("backButton");
-                
-                // Сохраняем URL предыдущей страницы
-                let previousPageUrl = null;
-                
-                // Функция для сохранения URL страницы при открытии формы
-                function savePreviousPageUrl() {
-                    previousPageUrl = window.location.href;
-                }
-                
-                // Функция для возврата на предыдущую страницу
-                function goBack() {
-                    if (previousPageUrl) {
-                        window.location.href = previousPageUrl;
-                    } else {
-                        window.history.back();
-                    }
-                }
-                
-                // Показать кнопку "Назад" при открытии окошка "form1"
-                form1.addEventListener("click", function () {
-                    backButtonElement.style.opacity = "1";
-                    savePreviousPageUrl();
-                });
-                
-                // Настройте обработчик нажатия кнопки "Назад"
-                backButtonElement.addEventListener("click", goBack);
-                
-                // Скрыть кнопку "Назад" при закрытии окошка "form1"
-                form1.addEventListener("transitionend", function (event) {
-                    if (event.propertyName === "opacity" && getComputedStyle(form1).opacity === "0") {
-                        backButtonElement.style.opacity = "0";
-                    }
-                });
-            });
 
 
 
