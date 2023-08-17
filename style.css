@@ -257,3 +257,8 @@ form {
     background-color: #2784C5; /* Синий цвет при наведении */
     transform: scale(1.05);
 }
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
