@@ -209,12 +209,12 @@
                 });
                 
                 // Настройте обработчик нажатия кнопки "Назад"
-                backButton.onClick(goBack);
+                backButtonElement.addEventListener("click", goBack);
                 
                 // Скрыть кнопку "Назад" при закрытии окошка "form1"
                 form1.addEventListener("transitionend", function (event) {
                     if (event.propertyName === "opacity" && getComputedStyle(form1).opacity === "0") {
-                        backButton.hide();
+                        backButtonElement.style.opacity = "0";
                     }
                 });
             });
