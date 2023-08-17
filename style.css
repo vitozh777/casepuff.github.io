@@ -233,26 +233,7 @@ form {
 
 
 
-#mainButtonContainer {
-    position: absolute;
-    top: 10px; /* Расстояние сверху */
-    right: 10px; /* Расстояние справа */
-    display: none;
-}
 
-#mainbutton {
-    background-color: #009933; /* Зеленый фон */
-    color: white; /* Белый цвет текста */
-    border: none;
-    border-radius: 50%; /* Делаем круглую форму */
-    width: 60px;
-    height: 60px;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 .disabled {
