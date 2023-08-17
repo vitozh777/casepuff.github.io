@@ -185,19 +185,7 @@
             });
 
 
-            var BackButton = WebApp.BackButton;
             
-            BackButton.onClick(function() {
-                WebApp.showAlert("Нет пути назад!"); // Показываем сообщение при нажатии на кнопку "Назад"
-                form1.style.display = "none"; // Скрываем форму
-                homeContent.style.display = "block"; // Отображаем домашний контент
-                BackButton.show(); // Показываем кнопку "Назад" снова
-            });
-            
-            WebApp.onEvent('backButtonClicked', function() {
-                // Ваш код обработки события 'backButtonClicked' (если необходимо)
-                // Например, можно добавить дополнительную логику при нажатии кнопки "Назад" в приложении
-            });
             
             
             
