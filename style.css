@@ -230,3 +230,18 @@ form {
     white-space: normal; /* Перенос слов на следующую строку */
     margin: 5px 10px;
 }
+
+
+.mainButtonContainer {
+    display: none;
+    text-align: center; /* Выравнивание по центру */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.mainbutton {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
