@@ -104,7 +104,20 @@
 
         <form id="form1" class="hidden">
             <div class="product-details">
-                <img src="BLACKPUFF2.PNG" alt="" class="img2">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="BLACKPUFF2.PNG" alt="" class="img2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="BLACKPUFF2.PNG" alt="" class="img2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="BLACKPUFF2.PNG" alt="" class="img2">
+                        </div>
+                        <!-- Добавьте дополнительные слайды с изображениями по аналогии -->
+                    </div>
+                </div>
                 <div class="namecase2">THE PUFFER CASE-BLACK</div>
                 <div class="price2">1699₽-2099₽</div>
                 <div class="p">Выберите модель телефона:</div>
@@ -135,6 +148,13 @@
 
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        
+        <!-- Подключение стилей Swiper.js -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        
+        <!-- Подключение скрипта Swiper.js -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
         <script>
             let tg = window.Telegram.WebApp;
@@ -149,7 +169,37 @@
                 document.getElementById("home").style.display = "none"
                 document.getElementById("form1").style.display = "block"
 
+
+                tg.ready(function() {
+                    tg.setIcon({ menu: true });
+                    
+                    // Показываем кнопку "Назад" в верхнем меню
+                    var BackButton = WebApp.BackButton;
+                    BackButton.show();
+                    
+                    // Обработчик нажатия на кнопку "Назад"
+                    BackButton.onClick(function() {
+                        document.getElementById("home").style.display = "block";
+                        document.getElementById("form1").style.display = "none";
+                        
+                        tg.ready(function() {
+                            tg.setIcon({ menu: true });
+                            
+                            // Скрываем кнопку "Назад"
+                            BackButton.hide();
+                        });
+                    });
+                });
+
+
+                
             });
+            
+            
+            
+
+
+
 
             models.forEach(model => {
                 model.addEventListener("click", (event) => {
@@ -207,6 +257,15 @@
                     
                     // ... и так далее для остальных моделей
                 });
+            });
+
+
+            // Инициализация Swiper.js
+            const swiper = new Swiper('.swiper-container', {
+                // Опции Swiper.js
+                slidesPerView: 'auto', // Количество видимых слайдов
+                spaceBetween: 10, // Расстояние между слайдами
+                centeredSlides: true, // Центрирование активного слайда
             });
 
 

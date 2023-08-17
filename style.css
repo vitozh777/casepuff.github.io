@@ -157,3 +157,7 @@ form {
     letter-spacing: -.01em;
     color:black;
 }
+
+.swiper-container {
+    width: 100%;
+}
