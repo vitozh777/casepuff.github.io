@@ -178,7 +178,13 @@
             
             
             
+            // Настройка кнопки назад
             let backButton = window.Telegram.WebApp.BackButton;
+            
+            // Опционально: настройте стили кнопки
+            backButton.style.backgroundColor = "#007bff"; // Цвет фона (синий)
+            backButton.style.color = "white"; // Цвет текста (белый)
+            backButton.style.borderRadius = "10px"; // Скругление углов
             
             document.addEventListener("DOMContentLoaded", function () {
                 let form1 = document.getElementById("form1");
@@ -188,7 +194,7 @@
                 form1.addEventListener("click", function () {
                     backButton.show();
                 });
-                
+
                 // Настройте обработчик нажатия кнопки "Назад"
                 backButton.onClick(function () {
                     // Вернуться на предыдущую страницу
@@ -202,6 +208,7 @@
                     }
                 });
             });
+
 
             
             
