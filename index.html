@@ -184,6 +184,15 @@
         </form>
 
 
+
+        <div id="mainButtonContainer" style="display: none;">
+            <button id="mainbutton">Main Button</button>
+        </div>
+
+
+
+
+
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         
         <!-- Подключение стилей Swiper.js -->
@@ -206,16 +215,15 @@
             btn1.addEventListener("click", () => {
                 document.getElementById("home").style.display = "none"
                 document.getElementById("form1").style.display = "block"
-
-
-
-
-
             });
+
+            tg.expand();
 
 
 
             const addToBagBtn = document.getElementById('order1');
+            const mainButton = document.getElementById('mainbutton');
+            const mainButtonContainer = document.getElementById('mainButtonContainer');
 
 
 
@@ -238,6 +246,7 @@
                     model.style.border = "1px solid black";
 
                     addToBagBtn.removeAttribute("disabled");
+                    mainButtonContainer.style.display = "block";
 
                     // Здесь вы можете добавить логику для обновления цены в зависимости от модели
                     if (selectedModel === "iPhone 14 Pro Max") {
@@ -289,6 +298,11 @@
                 // Здесь вы можете добавить код для обработки добавления в корзину
                 // Например, отправка данных на сервер или отображение сообщения
                 // о добавлении в корзину.
+            });
+
+            mainButton.addEventListener("click", () => {
+                document.getElementById("home").style.display = "none";
+                document.getElementById("form1").style.display = "block";
             });
 
 
