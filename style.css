@@ -232,13 +232,6 @@ form {
 }
 
 
-#mainButtonContainer {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 #mainButtonContainer {
     position: fixed;
