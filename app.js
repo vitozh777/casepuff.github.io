@@ -156,7 +156,8 @@ addToBagBtn.addEventListener("click", () => {
         cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
     
         // Переключаем видимость корзины и основного контента
-        homeContent.style.display = "none";
+        document.getElementById("home").style.display = "none"
+        document.getElementById("form1").style.display = "none"
         cart.style.display = "block";
 
         tg.MainButton.hide();
