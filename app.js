@@ -18,6 +18,8 @@ btn1.addEventListener("click", () => {
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
+
+    backButton.show();
 });
 
 tg.expand();
@@ -189,8 +191,7 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
-backButton.show();
-console.log(backButton.isVisible); // true
+
 tg.BackButton.onClick = function() {
     // Скрываем текущую форму (form1)
     document.getElementById("form1").classList.add("hidden");
