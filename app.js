@@ -145,6 +145,19 @@ addToBagBtn.addEventListener("click", () => {
     sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
     tg.MainButton.text = "Оплатить";
     tg.MainButton.show();
+    tg.MainButton.onclick = function () {
+        // Обновляем информацию о выбранном товаре в корзине
+        cartItemName.textContent = "The Puffer Case - Black"; // Замените на нужное название товара
+        cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
+    
+        // Переключаем видимость корзины и основного контента
+        homeContent.style.display = "none";
+        cart.style.display = "block";
+    
+        // Настроим новую кнопку MainButton для корзины
+        tg.MainButton.text = "Продолжить покупки"; // Новый текст кнопки
+    };
+
     // Здесь вы можете добавить код для обработки добавления в корзину
     // Например, отправка данных на сервер или отображение сообщения
     // о добавлении в корзину.
@@ -199,65 +212,3 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-// Находим элементы
-const cart = document.getElementById("cart");
-const payButton = document.getElementById("payButton");
-const cartItemName = document.getElementById("cartItemName");
-const cartItemPrice = document.getElementById("cartItemPrice");
-const mainButton = tg.MainButton;
-
-// Добавляем обработчик события для кнопки "MainButton"
-mainButton.onclick = function () {
-    // Обновляем информацию о выбранном товаре в корзине
-    cartItemName.textContent = "The Puffer Case - Black"; // Замените на нужное название товара
-    cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
-
-    // Переключаем видимость корзины и основного контента
-    homeContent.style.display = "none";
-    cart.style.display = "block";
-
-    // Настроим новую кнопку MainButton для корзины
-    mainButton.text = "Продолжить покупки"; // Новый текст кнопки
-    mainButton.onclick = function () {
-        // При нажатии на новую кнопку MainButton, закрываем корзину и показываем основной контент
-        cart.style.display = "none";
-        homeContent.style.display = "block";
-        mainButton.text = "Оплатить"; // Восстанавливаем текст кнопки
-        mainButton.onclick = function () {
-            // Обработка добавления в корзину и оплаты
-            // Здесь вы можете добавить код для отправки данных на сервер
-            // или другие действия, связанные с оплатой товара.
-            
-            // Пример: отправка данных на сервер
-            const item = cartItemName.textContent;
-            const price = cartItemPrice.textContent;
-            
-            const paymentData = {
-                item: item,
-                price: price,
-                // Другие необходимые данные
-            };
-
-            // Отправка данных на сервер
-            fetch("/process-payment", {
-                method: "POST",
-                body: JSON.stringify(paymentData),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Payment processed:", data);
-                // Дополнительный код после успешной оплаты
-            })
-            .catch(error => {
-                console.error("Error processing payment:", error);
-                // Дополнительный код в случае ошибки оплаты
-            });
-        };
-        
-        tg.MainButton.text = "Оплатить";
-        tg.MainButton.show();
-    };
-};
