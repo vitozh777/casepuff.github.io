@@ -204,10 +204,13 @@
             let tg = window.Telegram.WebApp;
             let sizes = document.querySelectorAll(".size");
             let models = document.querySelectorAll(".model1");
-            let priceElement = document.querySelector(".price2");
+            let priceElement = document.querySelector(".price");
             let form1 = document.getElementById("form1");
             let homeContent = document.getElementById("home");
             let addToBagBtn = document.getElementById("order1");
+            let selectedModel = ""; // Для хранения выбранной модели
+            let selectedPrice = ""; // Для хранения выбранной цены
+            let priceElementForm = document.querySelector(".price2");
 
             
 
@@ -267,7 +270,8 @@
 
 
 
-
+            
+            
 
 
             models.forEach(model => {
@@ -275,11 +279,16 @@
                     event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     
                     const selectedModel = model.textContent;
+                    let selectedPrice = modelInfo[selectedModel];
 
                     // Удаляем границу у всех кнопок
                     models.forEach(btn => {
+                        btn.classList.remove("selected");
                         btn.style.border = "none";
                     });
+
+                    // Добавляем класс selected к выбранной кнопке
+                    model.classList.add("selected");
                     
                     // Обновляем стиль выбранной кнопки
                     model.style.border = "1px solid black";
@@ -287,50 +296,36 @@
                     addToBagBtn.disabled = false;
                     addToBagBtn.classList.remove("disabled");
 
-                    // Здесь вы можете добавить логику для обновления цены в зависимости от модели
-                    if (selectedModel === "iPhone 14 Pro Max") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone 14 Pro") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 14 Plus") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone 14") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 13 Pro Max") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone 13 Pro") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 13") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 13 mini") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 12 Pro Max") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone 12/12 Pro") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 12 mini") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 11 Pro Max") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone 11 Pro") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 11") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone Xs Max") {
-                        priceElement.textContent = "2099₽";
-                    } else if (selectedModel === "iPhone Xr") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone X/Xs") {
-                        priceElement.textContent = "1899₽";
-                    } else if (selectedModel === "iPhone 8 Plus/7 Plus") {
-                        priceElement.textContent = "1699₽";
-                    } else if (selectedModel === "iPhone 6/7/8/SE20") {
-                        priceElement.textContent = "1699₽";
-                    }
+                    priceElement.textContent = selectedPrice;
+                    priceElementForm.textContent = selectedPrice;
                     
-                    // ... и так далее для остальных моделей
+                    selectedModel = model.textContent;
                 });
             });
+
+
+
+            const modelInfo = {
+                "iPhone 14 Pro Max": "2099₽",
+                "iPhone 14 Pro": "1899₽",
+                "iPhone 14 Plus": "2099₽",
+                "iPhone 14": "1899₽",
+                "iPhone 13 Pro Max": "2099₽",
+                "iPhone 13 Pro": "1899₽",
+                "iPhone 13": "1899₽",
+                "iPhone 13 mini": "1899₽",
+                "iPhone 12 Pro Max": "2099₽",
+                "iPhone 12/12 Pro": "1899₽",
+                "iPhone 12 mini": "1899₽",
+                "iPhone 11 Pro Max": "2099₽",
+                "iPhone 11 Pro": "1899₽",
+                "iPhone 11": "1899₽",
+                "iPhone Xs Max": "2099₽",
+                "iPhone Xr": "1899₽",
+                "iPhone X/Xs": "1899₽",
+                "iPhone 8 Plus/7 Plus": "2099₽",
+                "iPhone 6/7/8/SE20": "1699₽",
+            };
 
 
 
@@ -343,13 +338,15 @@
             addToBagBtn.disabled = false;
             addToBagBtn.addEventListener("click", () => {
                 const itemName = "The Puffer Case - Black";
-                const itemPrice = "1699₽-2099₽";
+                const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+                const itemPrice = modelInfo[selectedModel];
+
 
                 
-                const message = `Заказ: ${itemName}\nЦена: ${itemPrice}`;
+                const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
                 
                 sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
-                tg.MainButton.setText("Оплатить");
+                tg.MainButton.text = "Оплатить";
                 tg.MainButton.show();
                 // Здесь вы можете добавить код для обработки добавления в корзину
                 // Например, отправка данных на сервер или отображение сообщения
@@ -389,13 +386,6 @@
 
 
 
-
-            // Инициализация Swiper.js с опцией scrollbar: true
-            const swiper = new Swiper('.swiper-container', {
-                slidesPerView: 'auto',
-                spaceBetween: 10,
-                centeredSlides: true,
-            });
 
 
 
