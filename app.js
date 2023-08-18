@@ -160,6 +160,7 @@ addToBagBtn.addEventListener("click", () => {
         cart.style.display = "block";
     
         // Настроим новую кнопку MainButton для корзины
+        mainButton.show();
         mainButton.text = "Продолжить покупки"; // Новый текст кнопки
     };
 
