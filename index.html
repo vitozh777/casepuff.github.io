@@ -128,7 +128,7 @@
                 <div class="price2">1699₽-2099₽</div>
                 <div class="p">Выберите модель телефона:</div>
                 <div class="models">
-                    <button class="model1" data-model1="iPhone 14 Pro Max">iPhone 14 Pro Max</button>
+                    <button class="model1">iPhone 14 Pro Max</button>
                     <button class="model1">iPhone 14 Pro</button>
                     <button class="model1">iPhone 14 Plus</button>
                     <button class="model1">iPhone 14</button>
@@ -345,10 +345,8 @@
                 const itemName = "The Puffer Case - Black";
                 const itemPrice = "1699₽-2099₽";
 
-                // Получаем выбранную модель
-                const selectedModel = document.querySelector(".model1.selected").getAttribute("data-model1");
                 
-                const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+                const message = `Заказ: ${itemName}\nЦена: ${itemPrice}`;
                 
                 sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
                 tg.MainButton.setText("Оплатить");
