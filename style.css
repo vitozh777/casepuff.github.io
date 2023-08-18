@@ -240,3 +240,29 @@ form {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+
+
+/* Стиль для контейнера корзины */
+#cart {
+    display: none; /* По умолчанию корзина скрыта */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль для названия товара в корзине */
+#cartItemName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Стиль для цены товара в корзине */
+#cartItemPrice {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+

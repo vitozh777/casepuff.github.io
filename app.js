@@ -160,10 +160,9 @@ addToBagBtn.addEventListener("click", () => {
         cart.style.display = "block";
 
         tg.MainButton.hide();
-    
         // Настроим новую кнопку MainButton для корзины
-        mainButton.show();
         mainButton.text = "Продолжить покупки"; // Новый текст кнопки
+        mainButton.show();
     };
 
     // Здесь вы можете добавить код для обработки добавления в корзину
