@@ -138,10 +138,6 @@ addToBagBtn.addEventListener("click", () => {
     const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
     const itemPrice = modelInfo[selectedModel];
 
-    const cart = document.getElementById("cart");
-    const cartItemName = document.getElementById("cartItemName");
-    const cartItemPrice = document.getElementById("cartItemPrice");
-    const mainButton = tg.MainButton;
 
 
                 
@@ -151,24 +147,10 @@ addToBagBtn.addEventListener("click", () => {
     tg.MainButton.text = "Оплатить";
     tg.MainButton.show();
     tg.MainButton.onclick = function () {
-        // Обновляем информацию о выбранном товаре в корзине
-        cartItemName.textContent = "The Puffer Case - Black"; // Замените на нужное название товара
-        cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
-    
-        // Переключаем видимость корзины и основного контента
-        document.getElementById("home").style.display = "none"
-        document.getElementById("form1").style.display = "none"
-        cart.style.display = "block";
-
-        tg.MainButton.hide();
-        // Настроим новую кнопку MainButton для корзины
-        mainButton.text = "Продолжить покупки"; // Новый текст кнопки
-        mainButton.show();
-    };
-
     // Здесь вы можете добавить код для обработки добавления в корзину
     // Например, отправка данных на сервер или отображение сообщения
     // о добавлении в корзину.
+    }
 });
 
 // Функция для отправки сообщения в бота
