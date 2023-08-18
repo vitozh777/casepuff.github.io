@@ -278,7 +278,7 @@
                 model.addEventListener("click", (event) => {
                     event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     
-                    const selectedModel = model.textContent;
+                    let selectedModel = model.textContent;
                     let selectedPrice = modelInfo[selectedModel];
 
                     // Удаляем границу у всех кнопок
@@ -379,6 +379,14 @@
                     console.error('Error sending message:', error);
                 }
             }
+
+
+
+            const swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                centeredSlides: true,
+            });
 
 
 
