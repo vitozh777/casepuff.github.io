@@ -150,7 +150,7 @@ addToBagBtn.addEventListener("click", () => {
     sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
     tg.MainButton.text = "Оплатить";
     tg.MainButton.show();
-    mainButton.onclick = function () {
+    tg.MainButton.onclick = function () {
         // Обновляем информацию о выбранном товаре в корзине
         cartItemName.textContent = "The Puffer Case - Black"; // Замените на нужное название товара
         cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
@@ -158,6 +158,8 @@ addToBagBtn.addEventListener("click", () => {
         // Переключаем видимость корзины и основного контента
         homeContent.style.display = "none";
         cart.style.display = "block";
+
+        tg.MainButton.hide();
     
         // Настроим новую кнопку MainButton для корзины
         mainButton.show();
