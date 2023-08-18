@@ -332,6 +332,13 @@
                 });
             });
 
+
+
+
+
+
+
+
             // Добавьте обработчик события click для кнопки "Add to Bag"
             addToBagBtn.disabled = false;
             addToBagBtn.addEventListener("click", () => {
@@ -349,8 +356,8 @@
 
             // Функция для отправки сообщения в бота
             async function sendMessageToBot(message) {
-                const botToken = "YOUR_BOT_TOKEN"; // Замените на ваш токен бота
-                const chatId = "YOUR_CHAT_ID"; // Замените на ваш ID чата
+                const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+                const chatId = "730712368"; // Замените на ваш ID чата
                 
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
                 const data = new URLSearchParams({
@@ -373,6 +380,9 @@
                     console.error('Error sending message:', error);
                 }
             }
+
+
+
 
 
 
