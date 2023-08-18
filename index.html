@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
@@ -203,13 +202,14 @@
 
         <script>
             let tg = window.Telegram.WebApp;
-            let btn1 = document.getElementById("btn1")
-            let order = document.getElementById("order")
             let sizes = document.querySelectorAll(".size");
             let models = document.querySelectorAll(".model1");
             let priceElement = document.querySelector(".price2");
             let form1 = document.getElementById("form1");
             let homeContent = document.getElementById("home");
+            let addToBagBtn = document.getElementById("order1");
+
+            
 
             btn1.addEventListener("click", () => {
                 document.getElementById("home").style.display = "none"
@@ -234,25 +234,11 @@
 
 
 
-            tg.MainButton.textcolor = "#FFFFFF"
-            tg.MainButton.color = "#2cab37"
+            
 
-            let item =""
 
-            let order1 = document.getElementById("order1")
-            //тут пишем остальные кнопки у других чехлов//
 
-            order1.addEventListener("click", function(){
-                if (MainButton.isVisible) {
-                    tg.MainButton.hide();
-                }
-                else {
-                    tg.MainButton.setText("Оплатить");
-                    item = "1";
-                    tg.MainButton.show();
-                }
-            })
-            //и так продолжаем//
+            
 
 
 
@@ -273,7 +259,10 @@
 
 
 
-            const addToBagBtn = document.getElementById('order1');
+
+
+
+            
 
 
 
@@ -346,10 +335,46 @@
             // Добавьте обработчик события click для кнопки "Add to Bag"
             addToBagBtn.disabled = false;
             addToBagBtn.addEventListener("click", () => {
+                const itemName = "The Puffer Case - Black";
+                const itemPrice = "1699₽-2099₽";
+                const message = `Пользователь заказал: ${itemName}\nЦена: ${itemPrice}`;
+                
+                sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+                tg.MainButton.setText("Оплатить");
+                tg.MainButton.show();
                 // Здесь вы можете добавить код для обработки добавления в корзину
                 // Например, отправка данных на сервер или отображение сообщения
                 // о добавлении в корзину.
             });
+
+            // Функция для отправки сообщения в бота
+            async function sendMessageToBot(message) {
+                const botToken = "YOUR_BOT_TOKEN"; // Замените на ваш токен бота
+                const chatId = "YOUR_CHAT_ID"; // Замените на ваш ID чата
+                
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                const data = new URLSearchParams({
+                    chat_id: chatId,
+                    text: message,
+                    reply_markup: JSON.stringify({
+                        inline_keyboard: [[{ text: 'Оплатить', callback_data: 'pay' }]],
+                    }),
+                });
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: data,
+                    });
+                    
+                    const result = await response.json();
+                    console.log('Message sent:', result);
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                }
+            }
+
+
 
 
 
