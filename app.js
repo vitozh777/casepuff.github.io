@@ -144,13 +144,13 @@ addToBagBtn.addEventListener("click", () => {
     const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
                 
     sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
-    tg.MainButton.text = "Оплатить";
-    tg.MainButton.color ="rgb(49, 181, 69)";
-    tg.MainButton.show();
-    tg.MainButton.onclick = function () {
-    // Здесь вы можете добавить код для обработки добавления в корзину
-    // Например, отправка данных на сервер или отображение сообщения
-    // о добавлении в корзину.
+
+    if (tg.MainButton.isVisible) {
+        tg.MainButton.hide();
+    }
+    else {
+        tg.MainButton.text = "Оплатить";
+        tg.MainButton.show();
     }
 });
 
