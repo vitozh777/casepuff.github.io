@@ -145,8 +145,8 @@ addToBagBtn.addEventListener("click", () => {
                 
     sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
     tg.MainButton.text = "Оплатить";
+    tg.MainButton.color ="rgb(49, 181, 69)";
     tg.MainButton.show();
-    tg.MainButton.color ="rgb(49, 181, 69)"
     tg.MainButton.onclick = function () {
     // Здесь вы можете добавить код для обработки добавления в корзину
     // Например, отправка данных на сервер или отображение сообщения
