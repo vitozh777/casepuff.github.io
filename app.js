@@ -189,10 +189,11 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
+backButton.show();
+console.log(backButton.isVisible); // true
 tg.BackButton.onClick = function() {
     // Скрываем текущую форму (form1)
     document.getElementById("form1").classList.add("hidden");
-    tg.MainButton.hide();
     document.getElementById("home").style.display = "block";
 };
 
