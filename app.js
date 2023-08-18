@@ -138,6 +138,11 @@ addToBagBtn.addEventListener("click", () => {
     const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
     const itemPrice = modelInfo[selectedModel];
 
+    const cart = document.getElementById("cart");
+    const cartItemName = document.getElementById("cartItemName");
+    const cartItemPrice = document.getElementById("cartItemPrice");
+    const mainButton = tg.MainButton;
+
 
                 
     const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
@@ -145,7 +150,7 @@ addToBagBtn.addEventListener("click", () => {
     sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
     tg.MainButton.text = "Оплатить";
     tg.MainButton.show();
-    tg.MainButton.onclick = function () {
+    mainButton.onclick = function () {
         // Обновляем информацию о выбранном товаре в корзине
         cartItemName.textContent = "The Puffer Case - Black"; // Замените на нужное название товара
         cartItemPrice.textContent = selectedPrice; // Замените на выбранную цену товара
@@ -155,7 +160,7 @@ addToBagBtn.addEventListener("click", () => {
         cart.style.display = "block";
     
         // Настроим новую кнопку MainButton для корзины
-        tg.MainButton.text = "Продолжить покупки"; // Новый текст кнопки
+        mainButtonainButton.text = "Продолжить покупки"; // Новый текст кнопки
     };
 
     // Здесь вы можете добавить код для обработки добавления в корзину
