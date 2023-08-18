@@ -189,6 +189,20 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
+tg.BackButton.onClick = function() {
+    // Скрываем текущую форму (form1)
+    document.getElementById("form1").classList.add("hidden");
+    tg.MainButton.hide();
+};
+
+
+
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+
+})
+
+
 
 
 
