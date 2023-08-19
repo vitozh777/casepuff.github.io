@@ -11,7 +11,7 @@ let priceElementForm = document.querySelector(".price2");
 
 
 
-
+tg.BackButton.hide()
             
 
 btn1.addEventListener("click", () => {
@@ -32,6 +32,8 @@ btn1.addEventListener("click", () => {
     tg.onClick(goBack);
 
 });
+
+
 
 tg.expand();
 
