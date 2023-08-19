@@ -9,7 +9,6 @@ let selectedModel = ""; // Для хранения выбранной модел
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
 
-const tg = Telegram.WebApp;
 
 // Показать кнопку "BackButton"
 tg.BackButton.show();
