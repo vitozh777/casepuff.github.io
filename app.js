@@ -130,9 +130,6 @@ async function sendMessageToBot(message) {
     const data = new URLSearchParams({
         chat_id: chatId,
         text: message,
-        reply_markup: JSON.stringify({
-            inline_keyboard: [[{ text: 'Оплатить', callback_data: 'pay' }]],
-        }),
     });
 
     try {
