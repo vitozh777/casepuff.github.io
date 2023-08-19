@@ -21,6 +21,88 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
+    models.forEach(model => {
+        model.addEventListener("click", (event) => {
+            event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                        
+            selectedModel = model.textContent;
+            selectedPrice = modelInfo[selectedModel];
+    
+            // Удаляем границу у всех кнопок
+            models.forEach(btn => {
+                btn.classList.remove("selected");
+                btn.style.border = "none";
+            });
+    
+            // Добавляем класс selected к выбранной кнопке
+            model.classList.add("selected");
+                        
+            // Обновляем стиль выбранной кнопки
+            model.style.border = "1px solid black";
+    
+            addToBagBtn.disabled = false;
+            addToBagBtn.classList.remove("disabled");
+    
+            priceElement.textContent = selectedPrice;
+            priceElementForm.textContent = selectedPrice;
+                        
+            selectedModel = model.textContent;
+        });
+    });
+
+    // Добавьте обработчик события click для кнопки "Add to Bag"
+    addToBagBtn.disabled = false;
+    addToBagBtn.addEventListener("click", () => {
+        const itemName = "The Puffer Case - Black";
+        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+        const itemPrice = modelInfo[selectedModel];
+    
+    
+    
+                    
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+                    
+        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+    
+        if (tg.MainButton.isVisible) {
+            tg.MainButton.hide();
+        }
+        else {
+            tg.MainButton.text = "Оплатить";
+            tg.MainButton.show();
+        }
+    });
+
+    async function sendMessageToBot(message) {
+        const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+        const chatId = "730712368"; // Замените на ваш ID чата
+                    
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const data = new URLSearchParams({
+            chat_id: chatId,
+            text: message,
+            reply_markup: JSON.stringify({
+                inline_keyboard: [[{ text: 'Оплатить', callback_data: 'pay' }]],
+            }),
+        });
+    
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: data,
+            });
+                        
+            const result = await response.json();
+            console.log('Message sent:', result);
+        } catch (error) {
+            console.error('Error sending message:', error);
+        }
+    }
+
+    
+
+    
+
     tg.BackButton.show();
 
     tg.onClick(() => {
@@ -37,38 +119,7 @@ tg.expand();
 
 
 
-       
-            
 
-
-models.forEach(model => {
-    model.addEventListener("click", (event) => {
-        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
-                    
-        selectedModel = model.textContent;
-        selectedPrice = modelInfo[selectedModel];
-
-        // Удаляем границу у всех кнопок
-        models.forEach(btn => {
-            btn.classList.remove("selected");
-            btn.style.border = "none";
-        });
-
-        // Добавляем класс selected к выбранной кнопке
-        model.classList.add("selected");
-                    
-        // Обновляем стиль выбранной кнопки
-        model.style.border = "1px solid black";
-
-        addToBagBtn.disabled = false;
-        addToBagBtn.classList.remove("disabled");
-
-        priceElement.textContent = selectedPrice;
-        priceElementForm.textContent = selectedPrice;
-                    
-        selectedModel = model.textContent;
-    });
-});
 
 
 
@@ -99,57 +150,6 @@ const modelInfo = {
 
 
 
-
-
-// Добавьте обработчик события click для кнопки "Add to Bag"
-addToBagBtn.disabled = false;
-addToBagBtn.addEventListener("click", () => {
-    const itemName = "The Puffer Case - Black";
-    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-    const itemPrice = modelInfo[selectedModel];
-
-
-
-                
-    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-                
-    sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
-
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
-        tg.MainButton.text = "Оплатить";
-        tg.MainButton.show();
-    }
-});
-
-// Функция для отправки сообщения в бота
-async function sendMessageToBot(message) {
-    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
-    const chatId = "730712368"; // Замените на ваш ID чата
-                
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const data = new URLSearchParams({
-        chat_id: chatId,
-        text: message,
-        reply_markup: JSON.stringify({
-            inline_keyboard: [[{ text: 'Оплатить', callback_data: 'pay' }]],
-        }),
-    });
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: data,
-        });
-                    
-        const result = await response.json();
-        console.log('Message sent:', result);
-    } catch (error) {
-        console.error('Error sending message:', error);
-    }
-}
 
 
 
