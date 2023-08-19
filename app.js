@@ -12,6 +12,9 @@ let priceElementForm = document.querySelector(".price2");
 
 const BackButton = window.Telegram.WebApp.BackButton;
 
+BackButton.show();
+BackButton.onClick(() => window.history.back());
+
 
 
             
@@ -24,8 +27,6 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
-    BackButton.show();
-    BackButton.onClick(() => window.history.back());
 });
 
 tg.expand();
