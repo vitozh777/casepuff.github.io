@@ -29,8 +29,8 @@ btn1.addEventListener("click", () => {
     
     // Функция для обработки клика по кнопке "BackButton"
     function goBack() {
-        document.getElementById("home").style.display = "block";
         document.getElementById("form1").style.display = "none";
+        document.getElementById("home").style.display = "block";
     }
     
     // Добавить обработчик клика на кнопку "BackButton"
