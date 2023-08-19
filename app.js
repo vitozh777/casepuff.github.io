@@ -12,7 +12,6 @@ let priceElementForm = document.querySelector(".price2");
 
 
 
-tg.BackButton.hide();
 
 
             
@@ -29,10 +28,10 @@ btn1.addEventListener("click", () => {
     tg.BackButton.show();
     
     // Функция для обработки клика по кнопке "BackButton"
-    const goBack = () => {
+    function goBack() {
         document.getElementById("home").style.display = "block";
         document.getElementById("form1").style.display = "none";
-    };
+    }
     
     // Добавить обработчик клика на кнопку "BackButton"
     tg.onClick(goBack);
