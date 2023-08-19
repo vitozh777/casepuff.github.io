@@ -8,21 +8,12 @@ let addToBagBtn = document.getElementById("order1");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
-const backButton = tg.BackButton;
 
 
-// Добавьте следующий код для обработки нажатия на кнопку "BackButton"
-const goBack = () => {
-    document.getElementById("form1").classList.add("hidden");
-    tg.MainButton.hide();
-    document.getElementById("home").style.display = "block";
+const BackButton = window.Telegram.WebApp.BackButton;
 
-    // Скрываем кнопку "BackButton"
-    backButton.hide();
-};
-
-// Установите обработчик нажатия на кнопку "BackButton"
-backButton.onClick = goBack;
+BackButton.show();
+BackButton.onClick(() => window.history.back());
 
             
 
@@ -34,7 +25,8 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
-    backButton.show();
+    BackButton.show();
+    BackButton.onClick(() => window.history.back());
 });
 
 tg.expand();
