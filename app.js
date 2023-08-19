@@ -22,12 +22,14 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
-    tg.BackButton.show()
+    tg.BackButton.show();
 
     const goBack = () => {
         document.getElementById("home").style.display = "block"
         document.getElementById("form1").style.display = "none"
-    }
+    };
+
+    tg.onClick(goBack);
 
 });
 
