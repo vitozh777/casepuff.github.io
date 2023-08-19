@@ -24,19 +24,6 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
-    // Показать кнопку "BackButton"
-    tg.BackButton.show();
-    
-    // Функция для обработки клика по кнопке "BackButton"
-    function goBack() {
-        document.getElementById("form1").style.display = "none";
-        document.getElementById("home").style.display = "block";
-    }
-    
-    // Добавить обработчик клика на кнопку "BackButton"
-    tg.onClick(goBack);
-
-
 });
 
 tg.expand();
