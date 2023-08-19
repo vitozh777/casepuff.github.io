@@ -33,7 +33,7 @@ btn1.addEventListener("click", () => {
 });
 
 
-
+tg.BackButton.hide()
        
             
 
