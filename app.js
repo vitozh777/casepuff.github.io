@@ -24,12 +24,13 @@ btn1.addEventListener("click", () => {
 
     tg.BackButton.show();
 
+    tg.onClick(goBack);
+
     const goBack = () => {
         document.getElementById("home").style.display = "block"
         document.getElementById("form1").style.display = "none"
     };
 
-    tg.onClick(goBack);
 
 });
 
