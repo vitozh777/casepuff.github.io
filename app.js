@@ -12,8 +12,7 @@ let priceElementForm = document.querySelector(".price2");
 
 const BackButton = window.Telegram.WebApp.BackButton;
 
-BackButton.show();
-BackButton.onClick(() => window.history.back());
+
 
             
 
