@@ -17,6 +17,10 @@ btn1.addEventListener("click", () => {
     document.getElementById("home").style.display = "none"
     document.getElementById("form1").style.display = "block"
 
+    // Делаем кнопку "order1" неактивной
+    addToBagBtn.disabled = true;
+    addToBagBtn.classList.add("disabled");
+
 
     tg.BackButton.show();
 
@@ -29,10 +33,6 @@ btn1.addEventListener("click", () => {
 });
 
 
-
-// Делаем кнопку "order1" неактивной
-addToBagBtn.disabled = true;
-addToBagBtn.classList.add("disabled");
 
        
             
@@ -101,23 +101,22 @@ const modelInfo = {
 // Добавьте обработчик события click для кнопки "Add to Bag"
 addToBagBtn.disabled = false;
 addToBagBtn.addEventListener("click", () => {
-    const itemName = "The Puffer Case - Black";
-    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-    const itemPrice = modelInfo[selectedModel];
-
-
-
-                
-    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-                
-    sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
-
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
-        tg.MainButton.text = "Оплатить";
-        tg.MainButton.show();
+    if (!addToBagBtn.disabled) {
+        const itemName = "The Puffer Case - Black";
+        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+        const itemPrice = modelInfo[selectedModel];
+        
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+        
+        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+        
+        if (tg.MainButton.isVisible) {
+            tg.MainButton.hide();
+        }
+        else {
+            tg.MainButton.text = "Оплатить";
+            tg.MainButton.show();
+        }
     }
 });
 
