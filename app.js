@@ -8,6 +8,21 @@ let addToBagBtn = document.getElementById("order1");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
+const backButton = tg.BackButton;
+
+
+// Добавьте следующий код для обработки нажатия на кнопку "BackButton"
+const goBack = () => {
+    document.getElementById("form1").classList.add("hidden");
+    tg.MainButton.hide();
+    document.getElementById("home").style.display = "block";
+
+    // Скрываем кнопку "BackButton"
+    backButton.hide();
+};
+
+// Установите обработчик нажатия на кнопку "BackButton"
+backButton.onClick = goBack;
 
             
 
@@ -192,10 +207,14 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 
+// Добавьте следующий код, чтобы скрыть кнопку "BackButton" при закрытии "form1"
 tg.BackButton.onClick = function() {
-    // Скрываем текущую форму (form1)
     document.getElementById("form1").classList.add("hidden");
+    tg.MainButton.hide();
     document.getElementById("home").style.display = "block";
+
+    // Скрываем кнопку "BackButton"
+    backButton.hide();
 };
 
 
