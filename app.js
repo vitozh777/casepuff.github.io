@@ -41,50 +41,7 @@ tg.expand();
 
 
 
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-            
+       
             
 
 
@@ -206,16 +163,6 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
-
-// Добавьте следующий код, чтобы скрыть кнопку "BackButton" при закрытии "form1"
-tg.BackButton.onClick = function() {
-    document.getElementById("form1").classList.add("hidden");
-    tg.MainButton.hide();
-    document.getElementById("home").style.display = "block";
-
-    // Скрываем кнопку "BackButton"
-    backButton.hide();
-};
 
 
 
