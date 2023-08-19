@@ -100,24 +100,23 @@ const modelInfo = {
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 addToBagBtn.disabled = false;
-addToBagBtn.addEventListener("click", () => {
-    if (!addToBagBtn.disabled) {
-        const itemName = "The Puffer Case - Black";
-        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-        const itemPrice = modelInfo[selectedModel];
+addToBagBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const itemName = "The Puffer Case - Black";
+    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+    const itemPrice = modelInfo[selectedModel];
         
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
         
-        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+    sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
         
-        if (tg.MainButton.isVisible) {
-            tg.MainButton.hide();
-        }
-        else {
-            tg.MainButton.text = "Оплатить";
-            tg.MainButton.show();
-        }
+    if (tg.MainButton.isVisible) {
+        tg.MainButton.hide();
     }
+    else {
+        tg.MainButton.text = "Оплатить";
+        tg.MainButton.show();
+    }   
 });
 
 // Функция для отправки сообщения в бота
