@@ -24,14 +24,14 @@ btn1.addEventListener("click", () => {
 
     tg.BackButton.show();
 
-
+    tg.BackButton("click", () => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form1").style.display = "none";
+    });
 
 });
 
-tg.onClick(() => {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("form1").style.display = "none";
-});
+
 
           
 
