@@ -53,6 +53,8 @@ btn1.addEventListener("click", () => {
     // Добавьте обработчик события click для кнопки "Add to Bag"
     addToBagBtn.disabled = false;
     addToBagBtn.addEventListener("click", () => {
+        document.getElementById("home").style.display = "none"
+        document.getElementById("form1").style.display = "block"
         const itemName = "The Puffer Case - Black";
         const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
         const itemPrice = modelInfo[selectedModel];
