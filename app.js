@@ -9,11 +9,20 @@ let selectedModel = ""; // Для хранения выбранной модел
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
 
+const tg = Telegram.WebApp;
 
-const BackButton = window.Telegram.WebApp.BackButton;
+// Показать кнопку "BackButton"
+tg.BackButton.show();
 
-BackButton.show();
-BackButton.onClick(() => window.history.back());
+// Функция для обработки клика по кнопке "BackButton"
+const goBack = () => {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("form1").style.display = "none";
+};
+
+// Добавить обработчик клика на кнопку "BackButton"
+tg.onClick(goBack);
+
 
 
 
@@ -26,6 +35,8 @@ btn1.addEventListener("click", () => {
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
+
+    tg.BackButton.hide();
 
 });
 
@@ -162,19 +173,3 @@ const swiper = new Swiper('.swiper-container', {
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
