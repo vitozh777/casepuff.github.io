@@ -11,14 +11,6 @@ let priceElementForm = document.querySelector(".price2");
 
 
 
-if (tg.BackButton.isVisible) {
-    // Кнопка "BackButton" видима, выполните нужные действия
-    document.getElementById("form1").style.display = "block"
-} else {
-    // Кнопка "BackButton" скрыта, выполните другие действия
-    document.getElementById("home").style.display = "none"
-}
-
 
             
 
@@ -29,6 +21,13 @@ btn1.addEventListener("click", () => {
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
+
+    tg.BackButton.show()
+
+    const goBack = () => {
+        document.getElementById("home").style.display = "block"
+        document.getElementById("form1").style.display = "none"
+    }
 
 });
 
