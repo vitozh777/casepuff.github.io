@@ -24,19 +24,16 @@ btn1.addEventListener("click", () => {
 
     tg.BackButton.show();
 
-    tg.onClick(() => {
-        document.getElementById("home").style.display = "block";
-        document.getElementById("form1").style.display = "none";
-        tg.BackButton.hide(); // Скрываем кнопку BackButton
-    });
 
-    tg.BackButton.hide();
 
 });
 
+tg.onClick(() => {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("form1").style.display = "none";
+});
 
-       
-            
+          
 
 
 models.forEach(model => {
