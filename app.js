@@ -13,10 +13,10 @@ let priceElementForm = document.querySelector(".price2");
 
 if (tg.BackButton.isVisible) {
     // Кнопка "BackButton" видима, выполните нужные действия
-    document.getElementById("form1").style.display = "none"
+    document.getElementById("form1").style.display = "block"
 } else {
     // Кнопка "BackButton" скрыта, выполните другие действия
-    document.getElementById("home").style.display = "block"
+    document.getElementById("home").style.display = "none"
 }
 
 
