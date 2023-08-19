@@ -10,19 +10,9 @@ let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
 
 
-// Показать кнопку "BackButton"
-tg.BackButton.show();
-
-// Функция для обработки клика по кнопке "BackButton"
-const goBack = () => {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("form1").style.display = "none";
-};
-
-// Добавить обработчик клика на кнопку "BackButton"
-tg.onClick(goBack);
 
 
+tg.BackButton.hide();
 
 
             
@@ -35,7 +25,18 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
-    tg.BackButton.hide();
+    // Показать кнопку "BackButton"
+    tg.BackButton.show();
+    
+    // Функция для обработки клика по кнопке "BackButton"
+    const goBack = () => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form1").style.display = "none";
+    };
+    
+    // Добавить обработчик клика на кнопку "BackButton"
+    tg.onClick(goBack);
+
 
 });
 
