@@ -30,10 +30,11 @@ btn1.addEventListener("click", () => {
         tg.BackButton.hide(); // Скрываем кнопку BackButton
     });
 
+    tg.BackButton.hide();
+
 });
 
 
-tg.BackButton.hide()
        
             
 
