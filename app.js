@@ -19,12 +19,6 @@ btn1.addEventListener("click", () => {
 
     tg.BackButton.show();
 
-    const goBack = () => {
-        document.getElementById("home").style.display = "block";
-        document.getElementById("form1").style.display = "none";
-        tg.BackButton.hide();
-    };
-
     onClick(goBack)
 
     // Делаем кнопку "order1" неактивной
