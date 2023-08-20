@@ -24,12 +24,13 @@ btn1.addEventListener("click", () => {
 
     backButton.show();
 
+    backButton.onClick(() => {
+        history.back();
+    });
+
 
 });
 
-backButton.onClick(() => {
-    history.back();
-});
 
 
 models.forEach(model => {
