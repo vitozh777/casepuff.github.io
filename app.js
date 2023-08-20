@@ -98,9 +98,8 @@ btn1.addEventListener("click", () => {
 });
 
 btn2.addEventListener("click", () => {
-    document.getElementById("home").style.display = "none"
-    document.getElementById("form2").style.display = "block"
-
+    document.getElementById("home").style.display = "none";
+    document.getElementById("form2").style.display = "block";
 
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
@@ -114,9 +113,8 @@ btn2.addEventListener("click", () => {
         tg.MainButton.hide();
         backButton.hide();
     });
-
-
 });
+
 
 
 
