@@ -11,6 +11,68 @@ let priceElementForm = document.querySelector(".price2");
 
 const backButton = Telegram.WebApp.BackButton;
 
+const allSection = document.getElementById("all");
+const pufferSection = document.getElementById("puffer");
+const soapSection = document.getElementById("soap");
+const airpodsSection = document.getElementById("airpods");
+const tpcItems = document.querySelectorAll(".item#TPC");
+const tspItems = document.querySelectorAll(".item#TSC");
+const tacItems = document.querySelectorAll(".item#TAC");
+
+allSection.addEventListener("click", () => {
+    toggleItemsVisibility(tpcItems, true);
+    toggleItemsVisibility(tspItems, true);
+    toggleItemsVisibility(tacItems, true);
+});
+
+pufferSection.addEventListener("click", () => {
+    toggleItemsVisibility(tpcItems, true);
+    toggleItemsVisibility(tspItems, false);
+    toggleItemsVisibility(tacItems, false);
+});
+
+soapSection.addEventListener("click", () => {
+    toggleItemsVisibility(tpcItems, false);
+    toggleItemsVisibility(tspItems, true);
+    toggleItemsVisibility(tacItems, false);
+});
+
+airpodsSection.addEventListener("click", () => {
+    toggleItemsVisibility(tpcItems, false);
+    toggleItemsVisibility(tspItems, false);
+    toggleItemsVisibility(tacItems, true);
+});
+
+function toggleItemsVisibility(items, isVisible) {
+    items.forEach(item => {
+        item.style.display = isVisible ? "block" : "none";
+    });
+}
+
+const sections = document.querySelectorAll(".section");
+
+let activeSection = null; // Переменная для хранения активного раздела
+
+sections.forEach(section => {
+    section.addEventListener("click", () => {
+        // Снимаем выделение с предыдущего раздела
+        if (activeSection) {
+            activeSection.classList.remove("active");
+        }
+
+        // Добавляем выделение текущему разделу
+        section.classList.add("active");
+        activeSection = section; // Обновляем активный раздел
+    });
+});
+
+
+
+
+
+
+
+
          
 
 btn1.addEventListener("click", () => {
