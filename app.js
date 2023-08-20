@@ -9,6 +9,24 @@ let selectedModel = ""; // Для хранения выбранной модел
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
 
+const backButton = Telegram.WebApp.BackButton;
+
+// Показывать кнопку только если есть GET параметры 
+// Показывать кнопку только если есть параметры 
+// и страница не главная
+if (window.location.search && window.location.pathname !== '/') {
+
+  backButton.show();
+
+} else {
+
+  backButton.hide(); 
+
+}
+backButton.onClick(() => {
+      history.back();
+    });
+
 
 
             
@@ -17,9 +35,6 @@ btn1.addEventListener("click", () => {
     document.getElementById("home").style.display = "none"
     document.getElementById("form1").style.display = "block"
 
-    tg.BackButton.show();
-
-    onClick(goBack)
 
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
