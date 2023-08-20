@@ -9,11 +9,6 @@ let selectedModel = ""; // Для хранения выбранной модел
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
 
-const BackButton = window.Telegram.WebApp.BackButton;
-    
-    BackButton.show();
-    BackButton.onClick(() => window.history.back());
-
 
 
             
@@ -28,6 +23,11 @@ btn1.addEventListener("click", () => {
 
 
 });
+
+const BackButton = window.Telegram.WebApp.BackButton;
+    
+    BackButton.show();
+    BackButton.onClick(() => window.history.back());
 
 
 
