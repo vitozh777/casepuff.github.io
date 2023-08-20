@@ -17,6 +17,16 @@ btn1.addEventListener("click", () => {
     document.getElementById("home").style.display = "none"
     document.getElementById("form1").style.display = "block"
 
+    tg.BackButton.show();
+
+    const goBack = () => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form1").style.display = "none";
+        tg.BackButton.hide();
+    };
+
+    onClick(goBack)
+
     // Делаем кнопку "order1" неактивной
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
@@ -24,14 +34,7 @@ btn1.addEventListener("click", () => {
 
 });
 
-const BackButton = window.Telegram.WebApp.BackButton;
-    
-    BackButton.show();
-    BackButton.onClick(() => window.history.back());
-
-
-
-          
+        
 
 
 models.forEach(model => {
