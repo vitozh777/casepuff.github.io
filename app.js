@@ -25,7 +25,8 @@ btn1.addEventListener("click", () => {
     backButton.show();
 
     backButton.onClick(() => {
-        history.back();
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form1").style.display = "none";
     });
 
 
