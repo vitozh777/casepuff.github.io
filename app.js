@@ -3,6 +3,7 @@ let sizes = document.querySelectorAll(".size");
 let models = document.querySelectorAll(".model1");
 let priceElement = document.querySelector(".price");
 let form1 = document.getElementById("form1");
+let btn1 = document.getElementById("btn1");
 let homeContent = document.getElementById("home");
 let addToBagBtn = document.getElementById("order1");
 let selectedModel = ""; // Для хранения выбранной модели
@@ -89,6 +90,27 @@ btn1.addEventListener("click", () => {
     backButton.onClick(() => {
         document.getElementById("home").style.display = "block";
         document.getElementById("form1").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+
+
+});
+
+btn2.addEventListener("click", () => {
+    document.getElementById("home").style.display = "none"
+    document.getElementById("form2").style.display = "block"
+
+
+    // Делаем кнопку "order1" неактивной
+    addToBagBtn.disabled = true;
+    addToBagBtn.classList.add("disabled");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form2").style.display = "none";
         tg.MainButton.hide();
         backButton.hide();
     });
