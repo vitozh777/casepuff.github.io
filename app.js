@@ -11,25 +11,7 @@ let priceElementForm = document.querySelector(".price2");
 
 const backButton = Telegram.WebApp.BackButton;
 
-// Показывать кнопку только если есть GET параметры 
-// Показывать кнопку только если есть параметры 
-// и страница не главная
-if (window.location.search && window.location.pathname !== '/') {
-
-  backButton.show();
-
-} else {
-
-  backButton.hide(); 
-
-}
-backButton.onClick(() => {
-      history.back();
-    });
-
-
-
-            
+         
 
 btn1.addEventListener("click", () => {
     document.getElementById("home").style.display = "none"
@@ -40,10 +22,14 @@ btn1.addEventListener("click", () => {
     addToBagBtn.disabled = true;
     addToBagBtn.classList.add("disabled");
 
+    backButton.show();
+
 
 });
 
-        
+backButton.onClick(() => {
+    history.back();
+});
 
 
 models.forEach(model => {
