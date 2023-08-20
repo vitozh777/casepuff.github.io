@@ -27,6 +27,7 @@ btn1.addEventListener("click", () => {
     backButton.onClick(() => {
         document.getElementById("home").style.display = "block";
         document.getElementById("form1").style.display = "none";
+        tg.MainButton.hide();
         backButton.hide();
     });
 
