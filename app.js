@@ -355,5 +355,34 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
     window.open(telegramLink, "_blank");
 });
 
+Telegram.WebApp.onEvent("mainButtonClicked", async function() {
+    const selectedModel = document.querySelector(".model1.selected").textContent;
+    const selectedPrice = modelInfo1[selectedModel];
+    const itemName = "THE PUFFER CASE-BLACK";
+    
+    const message = `Выбранный товар: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+    
+    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+    const targetChatId = "633607737"; // Замените на chat_id пользователя
+    
+    const sendMessageUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const data = new URLSearchParams({
+        chat_id: targetChatId,
+        text: message,
+    });
+    
+    try {
+        const response = await fetch(sendMessageUrl, {
+            method: 'POST',
+            body: data,
+        });
+        
+        const result = await response.json();
+        console.log('Message sent:', result);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+});
+
 
 tg.expand();
