@@ -338,30 +338,22 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    const telegramBotToken = '6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg';
-    const recipientUserId = 'ccelaryy'; // Замените на ID пользователя, которому хотите отправить сообщение
-    const message = 'Привет! Это сообщение отправлено через бота.';
+Telegram.WebApp.onEvent("mainButtonClicked", async function() {
+    // Получаем ID пользователя, которому будем отправлять сообщение
+    const recipientUserId = 'ccelaryy'; // Замените на ID пользователя "@ccelaryy"
     
-    const apiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+    // Создаем текст сообщения с выбранным товаром, моделью телефона и ценой
+    const message = `Выбран товар: THE PUFFER CASE-BLACK\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
     
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: recipientUserId,
-            text: message,
-        }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Сообщение отправлено:', data);
-    })
-    .catch(error => {
-        console.error('Ошибка при отправке сообщения:', error);
-    });
+    // Отправляем сообщение пользователю через личные сообщения
+    await sendMessageToUser(recipientUserId, message);
+    
+    // Очищаем выбор товара, модели и цены (если необходимо)
+    selectedModel = "";
+    selectedPrice = "";
+
+    // Скрываем кнопку "MainButton"
+    tg.MainButton.hide();
 });
 
 
