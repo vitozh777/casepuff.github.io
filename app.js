@@ -5,7 +5,7 @@ let priceElement = document.querySelector(".price");
 let form1 = document.getElementById("form1");
 let btn1 = document.getElementById("btn1");
 let homeContent = document.getElementById("home");
-let addToBagBtn = document.getElementById("order1");
+let order1 = document.getElementById("order1");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
@@ -82,8 +82,8 @@ btn1.addEventListener("click", () => {
 
 
     // Делаем кнопку "order1" неактивной
-    addToBagBtn.disabled = true;
-    addToBagBtn.classList.add("disabled");
+    order1.disabled = true;
+    order1.classList.add("disabled");
 
     backButton.show();
 
@@ -137,8 +137,8 @@ models.forEach(model => {
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
 
-        addToBagBtn.disabled = false;
-        addToBagBtn.classList.remove("disabled");
+        order1.disabled = false;
+        order1.classList.remove("disabled");
 
         priceElement.textContent = selectedPrice;
         priceElementForm.textContent = selectedPrice;
@@ -179,9 +179,9 @@ const modelInfo = {
 
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
-addToBagBtn.disabled = false;
-addToBagBtn.addEventListener("click", (event) => {
-    if (!addToBagBtn.disabled) {
+order1.disabled = false;
+order1.addEventListener("click", (event) => {
+    if (!order1.disabled) {
         event.preventDefault();
         const itemName = "The Puffer Case - Black";
         const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
