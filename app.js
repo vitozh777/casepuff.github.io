@@ -336,34 +336,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
 
 });
 
-const fetch = require('node-fetch');
-
-const botToken = '6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg'; // Замените на ваш токен бота
-const chatId = '730712368'; // Замените на ваш ID чата
-
-// Функция для отправки сообщения с фотографией в бота
-async function sendPhoto() {
-    const url = `https://api.telegram.org/bot${botToken}/sendPhoto`;
-
-    const data = new FormData();
-    data.append('chat_id', chatId);
-    data.append('photo', 'HI.PNG'); // Укажите имя файла вашей фотографии
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: data,
-        });
-
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.error('Error sending photo:', error);
-    }
-}
-
-// Отправляем фотографию
-sendPhoto();
 
 
 
