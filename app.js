@@ -348,8 +348,8 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
     const encodedMessage = encodeURIComponent(message);
     const userUsername = "ccelaryy"; // Юзернейм другого пользователя
     
-    // Создаем ссылку для открытия Telegram Web с интерфейсом отправки сообщения
-    const telegramLink = `https://t.me/${userUsername}?text=${encodedMessage}`;
+    // Создаем ссылку с deeplink для отправки сообщения с текстом другому пользователю
+    const telegramLink = `https://t.me/${userUsername}?start=${encodedMessage}`;
     
     // Открываем ссылку в новой вкладке
     window.open(telegramLink, "_blank");
