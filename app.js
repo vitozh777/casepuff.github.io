@@ -15,39 +15,6 @@ let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm1 = document.querySelector(".price2");
 let priceElementForm2 = document.querySelector(".price3");
 
-const fetch = require('node-fetch');
-const fs = require('fs');
-
-const botToken = '6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg'; // Замените на ваш токен бота
-const chatId = '730712368'; // Замените на ваш ID чата
-
-// Функция для отправки фотографии из файла
-async function sendPhotoFromFile(photoPath, caption) {
-    const url = `https://api.telegram.org/bot${botToken}/sendPhoto`;
-
-    const formData = new FormData();
-    formData.append('chat_id', chatId);
-    formData.append('photo', fs.createReadStream(photoPath));
-    formData.append('caption', caption);
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: formData,
-        });
-
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.error('Error sending photo:', error);
-    }
-}
-
-// Отправляем фотографию из файла
-const photoPath = 'path/to/your/photo.png'; // Укажите путь к файлу изображения PNG
-const caption = 'Привет! Я ваш бот. Как я могу помочь вам?';
-sendPhotoFromFile(photoPath, caption);
-
 
 
 const backButton = Telegram.WebApp.BackButton;
@@ -368,6 +335,36 @@ const swiper = new Swiper('.swiper-container', {
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
 
 });
+
+const fetch = require('node-fetch');
+
+const botToken = '6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg'; // Замените на ваш токен бота
+const chatId = '730712368'; // Замените на ваш ID чата
+
+// Функция для отправки сообщения с фотографией в бота
+async function sendPhoto() {
+    const url = `https://api.telegram.org/bot${botToken}/sendPhoto`;
+
+    const data = new FormData();
+    data.append('chat_id', chatId);
+    data.append('photo', 'HI.PNG'); // Укажите имя файла вашей фотографии
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: data,
+        });
+
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error('Error sending photo:', error);
+    }
+}
+
+// Отправляем фотографию
+sendPhoto();
+
 
 
 tg.expand();
