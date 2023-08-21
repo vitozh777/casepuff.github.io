@@ -339,8 +339,8 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    const telegramBotToken = 'YOUR_BOT_TOKEN';
-    const recipientUserId = 'RECIPIENT_USER_ID'; // Замените на ID пользователя, которому хотите отправить сообщение
+    const telegramBotToken = '6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg';
+    const recipientUserId = 'ccelaryy'; // Замените на ID пользователя, которому хотите отправить сообщение
     const message = 'Привет! Это сообщение отправлено через бота.';
     
     const apiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
