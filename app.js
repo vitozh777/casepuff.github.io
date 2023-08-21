@@ -6,6 +6,7 @@ let form1 = document.getElementById("form1");
 let btn1 = document.getElementById("btn1");
 let homeContent = document.getElementById("home");
 let order1 = document.getElementById("order1");
+let order2 = document.getElementById("order2");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm = document.querySelector(".price2");
@@ -75,7 +76,7 @@ sections.forEach(section => {
 
 
          
-
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 btn1.addEventListener("click", () => {
     document.getElementById("home").style.display = "none"
     document.getElementById("form1").style.display = "block"
@@ -96,25 +97,6 @@ btn1.addEventListener("click", () => {
 
 
 });
-
-btn2.addEventListener("click", () => {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("form2").style.display = "block";
-
-    // Делаем кнопку "order1" неактивной
-    addToBagBtn.disabled = true;
-    addToBagBtn.classList.add("disabled");
-
-    backButton.show();
-
-    backButton.onClick(() => {
-        document.getElementById("home").style.display = "block";
-        document.getElementById("form2").style.display = "none";
-        tg.MainButton.hide();
-        backButton.hide();
-    });
-});
-
 
 
 
@@ -224,7 +206,25 @@ async function sendMessageToBot(message) {
         console.error('Error sending message:', error);
     }
 }
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+btn2.addEventListener("click", () => {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("form2").style.display = "block";
 
+    // Делаем кнопку "order1" неактивной
+    order2.disabled = true;
+    order2.classList.add("disabled");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form2").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 
 
 const swiper = new Swiper('.swiper-container', {
