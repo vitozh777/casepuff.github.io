@@ -332,34 +332,18 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", async function() {
-    const itemName = "THE PUFFER CASE-BLACK";
-    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-    const itemPrice = modelInfo1[selectedModel];
-        
-    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+    // Создаем сообщение с информацией о товаре, модели и цене
+    const message = `Вы выбрали товар: ${selectedModel}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
 
-    const encodedMessage = encodeURIComponent(message);
-    const userUsername = "ccelaryy";
+    // Отправляем сообщение с ссылкой на ваш чат
+    const linkToChat = `https://t.me/ccelaryy`;
+    const fullMessage = `${message}\n\nДля дополнительных вопросов и заказа, перейдите в чат: ${linkToChat}`;
+    tg.sendMessage(fullMessage);
 
-    const telegramLink = `https://t.me/${userUsername}?text=${encodedMessage}`;
-    
-    const data = new URLSearchParams({
-        chat_id: targetUserId,
-        text: message,
-    });
-    
-    try {
-        const response = await fetch(encodedMessage, {
-            method: 'POST',
-            body: data,
-        });
-        
-        const result = await response.json();
-        console.log('Message sent:', result);
-    } catch (error) {
-        console.error('Error sending message:', error);
-    }
-    window.open(telegramLink, "_blank");
+    // Показываем кнопку MainButton
+    tg.MainButton.text = "Оплатить";
+    tg.MainButton.show();
 });
+
 
 tg.expand();
