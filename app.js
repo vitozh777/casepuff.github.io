@@ -339,7 +339,7 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.openChat('@ccelaryy');
+    tg.openChat('ccelaryy');
 })
 
 
