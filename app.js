@@ -338,9 +338,23 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+    const selectedModel = document.querySelector(".model1.selected").textContent;
+    const selectedPrice = modelInfo1[selectedModel];
+    const itemName = "THE PUFFER CASE-BLACK";
+    
+    const message = `Выбранный товар: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const userUsername = "ccelaryy"; // Юзернейм другого пользователя
+    
+    // Создаем ссылку для открытия Telegram Web с интерфейсом отправки сообщения
+    const telegramLink = `https://t.me/${userUsername}?text=${encodedMessage}`;
+    
+    // Открываем ссылку в новой вкладке
+    window.open(telegramLink, "_blank");
+});
 
-})
 
 
 tg.expand();
