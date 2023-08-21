@@ -337,17 +337,19 @@ Telegram.WebApp.onEvent("mainButtonClicked", async function() {
     const itemPrice = modelInfo1[selectedModel];
         
     const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const userUsername = "ccelaryy";
+
+    const telegramLink = `https://t.me/${userUsername}?text=${encodedMessage}`;
     
-    const targetUserId = "633607737"; // Замените на ID пользователя, которому хотите отправить сообщение
-    
-    const sendMessageUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: targetUserId,
         text: message,
     });
     
     try {
-        const response = await fetch(sendMessageUrl, {
+        const response = await fetch(encodedMessage, {
             method: 'POST',
             body: data,
         });
@@ -357,6 +359,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", async function() {
     } catch (error) {
         console.error('Error sending message:', error);
     }
+    window.open(telegramLink, "_blank");
 });
 
 tg.expand();
