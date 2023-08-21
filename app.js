@@ -338,15 +338,29 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-Telegram.WebApp.onEvent("mainButtonClicked", async function() {
+// ... (ваш предыдущий код)
+
+Telegram.WebApp.onLoaded(async function () {
     const recipientUsername = "ccelaryy"; // Замените на имя пользователя, кому хотите отправить сообщение
     const itemName = "THE PUFFER CASE-BLACK";
     const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
     const itemPrice = modelInfo1[selectedModel];
-        
+
     const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-        
-    await sendMessageToUser(recipientUsername, message);
+
+    // Добавляем обработчик для кнопки "MainButton"
+    tg.setMainButton({
+        text: "Оплатить",
+        onClick: async () => {
+            try {
+                await sendMessageToUser(recipientUsername, message);
+                // Открываем чат с указанным пользователем
+                await tg.openChat(recipientUsername);
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
+        },
+    });
 });
 
 // Функция для отправки сообщения другому пользователю
@@ -364,6 +378,8 @@ async function sendMessageToUser(recipientUsername, message) {
         console.error('Error sending message:', error);
     }
 }
+
+
 
 
 tg.expand();
