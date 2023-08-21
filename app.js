@@ -165,13 +165,6 @@ order1.disabled = false;
 order1.addEventListener("click", (event) => {
     if (!order1.disabled) {
         event.preventDefault();
-        const itemName = "THE PUFFER CASE-BLACK";
-        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-        const itemPrice = modelInfo1[selectedModel];
-        
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-        
-        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
         
         if (tg.MainButton.isVisible) {
             tg.MainButton.hide();
@@ -339,11 +332,11 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", async function() {
-    const selectedModel = document.querySelector(".model1.selected").textContent;
-    const selectedPrice = modelInfo1[selectedModel];
     const itemName = "THE PUFFER CASE-BLACK";
-    
-    const message = `Выбранный товар: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+    const itemPrice = modelInfo1[selectedModel];
+        
+    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
     
     const targetUserId = "633607737"; // Замените на ID пользователя, которому хотите отправить сообщение
     
@@ -365,6 +358,5 @@ Telegram.WebApp.onEvent("mainButtonClicked", async function() {
         console.error('Error sending message:', error);
     }
 });
-
 
 tg.expand();
