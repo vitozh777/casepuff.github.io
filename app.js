@@ -338,7 +338,6 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-
 Telegram.WebApp.onEvent("mainButtonClicked", async function() {
     const selectedModel = document.querySelector(".model1.selected").textContent;
     const selectedPrice = modelInfo1[selectedModel];
@@ -346,12 +345,11 @@ Telegram.WebApp.onEvent("mainButtonClicked", async function() {
     
     const message = `Выбранный товар: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
     
-    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
-    const targetChatId = "633607737"; // Замените на chat_id пользователя
+    const targetUserId = "633607737"; // Замените на ID пользователя, которому хотите отправить сообщение
     
     const sendMessageUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
-        chat_id: targetChatId,
+        chat_id: targetUserId,
         text: message,
     });
     
