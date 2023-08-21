@@ -339,23 +339,31 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", async function() {
-    // Получаем ID пользователя, которому будем отправлять сообщение
-    const recipientUserId = 'ccelaryy'; // Замените на ID пользователя "@ccelaryy"
-    
-    // Создаем текст сообщения с выбранным товаром, моделью телефона и ценой
-    const message = `Выбран товар: THE PUFFER CASE-BLACK\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
-    
-    // Отправляем сообщение пользователю через личные сообщения
-    await sendMessageToUser(recipientUserId, message);
-    
-    // Очищаем выбор товара, модели и цены (если необходимо)
-    selectedModel = "";
-    selectedPrice = "";
-
-    // Скрываем кнопку "MainButton"
-    tg.MainButton.hide();
+    const recipientUsername = "ccelaryy"; // Замените на имя пользователя, кому хотите отправить сообщение
+    const itemName = "THE PUFFER CASE-BLACK";
+    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+    const itemPrice = modelInfo1[selectedModel];
+        
+    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+        
+    await sendMessageToUser(recipientUsername, message);
 });
 
+// Функция для отправки сообщения другому пользователю
+async function sendMessageToUser(recipientUsername, message) {
+    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+    const recipient = encodeURIComponent(recipientUsername);
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${recipient}&text=${encodeURIComponent(message)}`;
+
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        console.log('Message sent:', result);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+}
 
 
 tg.expand();
