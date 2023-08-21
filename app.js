@@ -339,20 +339,29 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    const selectedModel = document.querySelector(".model1.selected").textContent;
-    const selectedPrice = modelInfo1[selectedModel];
-    const itemName = "THE PUFFER CASE-BLACK";
+    const telegramBotToken = 'YOUR_BOT_TOKEN';
+    const recipientUserId = 'RECIPIENT_USER_ID'; // Замените на ID пользователя, которому хотите отправить сообщение
+    const message = 'Привет! Это сообщение отправлено через бота.';
     
-    const message = `Выбранный товар: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+    const apiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
     
-    const encodedMessage = encodeURIComponent(message);
-    const userUsername = "ccelaryy"; // Юзернейм другого пользователя
-    
-    // Создаем ссылку с deeplink для отправки сообщения с текстом другому пользователю
-    const telegramLink = `https://t.me/${userUsername}?start=${encodedMessage}`;
-    
-    // Открываем ссылку в новой вкладке
-    window.open(telegramLink, "_blank");
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: recipientUserId,
+            text: message,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Сообщение отправлено:', data);
+    })
+    .catch(error => {
+        console.error('Ошибка при отправке сообщения:', error);
+    });
 });
 
 
