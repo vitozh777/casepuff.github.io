@@ -167,13 +167,22 @@ order1.addEventListener("click", (event) => {
     if (!order1.disabled) {
         event.preventDefault();
         
-        if (tg.MainButton.isVisible) {
-            tg.MainButton.hide();
-        }
-        else {
-            tg.MainButton.text = "Оплатить";
-            tg.MainButton.show();
-        }
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedPrice = modelInfo1[selectedModel];
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить " + selectedPrice;
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE PUFFER CASE-BLACK";
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+        
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(() => {
+            sendMessageToBot(message);
+        });
     }   
 });
 
@@ -333,39 +342,21 @@ const swiper = new Swiper('.swiper-container', {
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    const itemName = "THE PUFFER CASE-TINTED AIR";
-    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-    const itemPrice = modelInfo1[selectedModel];
-        
-    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-        
-    sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+    // Показать кнопку "Связаться с оператором" после клика на MainButton
+    contactOperatorButton.show();
 });
 
-// Функция для отправки сообщения в бота
-async function sendMessageToBot(message) {
-    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
-    const chatId = "730712368"; // Замените на ваш ID чата
-                
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const data = new URLSearchParams({
-        chat_id: chatId,
-        text: message,
-    });
+// Показать кнопку "Связаться с оператором" по умолчанию скрытой
+tg.contactOperatorButton.hide();
 
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: data,
-        });
-                    
-        const result = await response.json();
-        console.log('Message sent:', result);
-    } catch (error) {
-        console.error('Error sending message:', error);
+// Добавьте кнопку "Связаться с оператором"
+const contactOperatorButton = new tg.Button({
+    text: "Связаться с оператором",
+    onClick: () => {
+        // Здесь можно добавить код для открытия чата с оператором
+        // Например, можно открыть ссылку на Telegram с предзаполненным сообщением
     }
-}
-
+});
 
 
 
