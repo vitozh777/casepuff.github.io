@@ -16,7 +16,6 @@ let priceElementForm1 = document.querySelector(".price2");
 let priceElementForm2 = document.querySelector(".price3");
 
 
-
 const backButton = Telegram.WebApp.BackButton;
 
 const allSection = document.getElementById("all");
@@ -165,6 +164,8 @@ order1.disabled = false;
 order1.addEventListener("click", (event) => {
     if (!order1.disabled) {
         event.preventDefault();
+
+        const chatId = msg.chat.id;
         
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
@@ -180,8 +181,6 @@ order1.addEventListener("click", (event) => {
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
 
         tg.MainButton.onClick(async () => {
-            const userId = await tg.getUserId(); // Получаем идентификатор текущего пользователя
-            const chatId = await tg.getUserChatId(userId); // Получаем chat_id пользователя
         
             // Отправляем инструкцию пользователю
             sendMessageToUser(instructionMessage, chatId);
