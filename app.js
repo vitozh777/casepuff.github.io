@@ -342,7 +342,10 @@ const swiper = new Swiper('.swiper-container', {
 const keyboard = {
     inline_keyboard: [
         [
-            { text: "Оплатить", callback_data: "contact_operator" }
+            {
+                text: "Оплатить через оператора",
+                url: "https://t.me/ccelaryy",
+            }
         ]
     ]
 };
