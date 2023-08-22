@@ -334,12 +334,12 @@ const swiper = new Swiper('.swiper-container', {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     const itemName = "THE PUFFER CASE-TINTED AIR";
-        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
-        const itemPrice = modelInfo1[selectedModel];
+    const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+    const itemPrice = modelInfo1[selectedModel];
         
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
+    const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
         
-        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
+    sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
 });
 
 // Функция для отправки сообщения в бота
