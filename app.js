@@ -172,7 +172,7 @@ order1.addEventListener("click", (event) => {
         const selectedPrice = modelInfo1[selectedModel];
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплати " + selectedPrice;
+        tg.MainButton.text = "Оплатить " + selectedPrice;
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
@@ -345,7 +345,7 @@ const swiper = new Swiper('.swiper-container', {
 tg.contactOperatorButton.hide();
 
 // Добавьте кнопку "Связаться с оператором"
-const contactOperatorButton = new tg.Button({
+const contactOperatorButton = new tg.InlineKeyboardMarkup({
     text: "Связаться с оператором",
     onClick: () => {
         // Здесь можно добавить код для открытия чата с оператором
