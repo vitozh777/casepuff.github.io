@@ -186,6 +186,7 @@ order1.addEventListener("click", (event) => {
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
             sendMessageToBot(message);
+            contactOperatorButton.show();
         });
     }   
 });
@@ -343,12 +344,6 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-
-
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    // Показать кнопку "Связаться с оператором" после клика на MainButton
-    contactOperatorButton.show();
-});
 
 // Показать кнопку "Связаться с оператором" по умолчанию скрытой
 tg.contactOperatorButton.hide();
