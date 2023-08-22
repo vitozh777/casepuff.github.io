@@ -344,7 +344,7 @@ const keyboard = {
         [
             {
                 text: "Оплатить через оператора",
-                url: "https://t.me/ccelaryy",
+                url: "https://t.me/ccelaryy?text=Заказ%3A%20THE%20PUFFER%20CASE-BLACK%0AМодель%20телефона%3A%20iPhone%2014%20Pro%20Max%0AЦена%3A%202099₽",
             }
         ]
     ]
