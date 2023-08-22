@@ -16,6 +16,7 @@ let priceElementForm1 = document.querySelector(".price2");
 let priceElementForm2 = document.querySelector(".price3");
 
 
+
 const backButton = Telegram.WebApp.BackButton;
 
 const allSection = document.getElementById("all");
@@ -164,8 +165,6 @@ order1.disabled = false;
 order1.addEventListener("click", (event) => {
     if (!order1.disabled) {
         event.preventDefault();
-
-        const chatId = msg.chat.id;
         
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
@@ -179,23 +178,18 @@ order1.addEventListener("click", (event) => {
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
-
-        tg.MainButton.onClick(async () => {
         
-            // Отправляем инструкцию пользователю
-            sendMessageToUser(instructionMessage, chatId);
-        
-            // Отправляем сообщение о заказе с кнопкой пользователю
-            sendMessageToUserWithKeyboard(message, keyboard, chatId);
-        
-            // Закрываем WebApp
-            tg.close();
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(() => {
+            sendMessageToBot(instructionMessage);
+            sendMessageToBotWithKeyboard(message, keyboard);
         });
     }   
 });
 
-async function sendMessageToUser(instructionMessage, chatId) {
-    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+async function sendMessageToBot(instructionMessage) {
+    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg";
+    const chatId = "730712368";
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
@@ -210,15 +204,17 @@ async function sendMessageToUser(instructionMessage, chatId) {
         });
 
         const result = await response.json();
-        console.log('Message sent to user:', result);
+        console.log('Message sent:', result);
     } catch (error) {
         console.error('Error sending message:', error);
     }
 }
 
-async function sendMessageToUserWithKeyboard(message, keyboard, chatId) {
+// Функция для отправки сообщения в бота
+async function sendMessageToBotWithKeyboard(message, keyboard) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
-
+    const chatId = "730712368"; // Замените на ваш ID чата
+                
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: chatId,
@@ -231,9 +227,9 @@ async function sendMessageToUserWithKeyboard(message, keyboard, chatId) {
             method: 'POST',
             body: data,
         });
-
+                    
         const result = await response.json();
-        console.log('Message sent to user with keyboard:', result);
+        console.log('Message sent with keyboard:', result);
     } catch (error) {
         console.error('Error sending message:', error);
     }
