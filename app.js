@@ -160,7 +160,7 @@ const modelInfo1 = {
 };
 
 
-// Добавьте обработчик события click для кнопки "Add to Bag"
+// Добавьте обработчик события click для кнопки "Add"
 order1.disabled = false;
 order1.addEventListener("click", (event) => {
     if (!order1.disabled) {
@@ -183,6 +183,7 @@ order1.addEventListener("click", (event) => {
         tg.MainButton.onClick(() => {
             sendMessageToBot(instructionMessage);
             sendMessageToBotWithKeyboard(message, keyboard);
+            tg.close();
         });
     }   
 });
