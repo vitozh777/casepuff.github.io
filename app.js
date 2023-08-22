@@ -159,7 +159,14 @@ const modelInfo1 = {
     "iPhone 6/7/8/SE20": "1699₽",
 };
 
-
+// Создаем инлайн клавиатуру с кнопкой "Связаться с оператором"
+const keyboard = {
+    inline_keyboard: [
+        [
+            { text: "Связаться с оператором", callback_data: "contact_operator" }
+        ]
+    ]
+};
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 order1.disabled = false;
@@ -179,10 +186,12 @@ order1.addEventListener("click", (event) => {
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         
+        // Создаем инлайн клавиатуру с кнопкой "Связаться с оператором"
+        sendMessageToBotWithKeyboard(message, keyboard);
+        
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
             sendMessageToBot(message);
-            contactOperatorButton.show();
         });
     }   
 });
@@ -190,7 +199,7 @@ order1.addEventListener("click", (event) => {
 
 
 // Функция для отправки сообщения в бота
-async function sendMessageToBot(message) {
+async function sendMessageToBotWithKeyboard(message, keyboard) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
     const chatId = "730712368"; // Замените на ваш ID чата
                 
@@ -198,6 +207,7 @@ async function sendMessageToBot(message) {
     const data = new URLSearchParams({
         chat_id: chatId,
         text: message,
+        reply_markup: JSON.stringify(keyboard),
     });
 
     try {
@@ -207,7 +217,7 @@ async function sendMessageToBot(message) {
         });
                     
         const result = await response.json();
-        console.log('Message sent:', result);
+        console.log('Message sent with keyboard:', result);
     } catch (error) {
         console.error('Error sending message:', error);
     }
@@ -341,8 +351,6 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-// Показать кнопку "Связаться с оператором" по умолчанию скрытой
-tg.contactOperatorButton.hide();
 
 // Добавьте кнопку "Связаться с оператором"
 const contactOperatorButton = new tg.InlineKeyboardMarkup({
