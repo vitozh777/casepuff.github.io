@@ -186,12 +186,10 @@ order1.addEventListener("click", (event) => {
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         
-        // Создаем инлайн клавиатуру с кнопкой "Связаться с оператором"
-        sendMessageToBotWithKeyboard(message, keyboard);
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
-            sendMessageToBot(message);
+            sendMessageToBotWithKeyboard(message, keyboard);
         });
     }   
 });
