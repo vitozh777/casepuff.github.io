@@ -171,7 +171,7 @@ order1.addEventListener("click", (event) => {
         const selectedPrice = modelInfo1[selectedModel];
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
