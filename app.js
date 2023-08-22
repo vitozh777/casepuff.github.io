@@ -175,7 +175,7 @@ order1.addEventListener("click", (event) => {
             tg.MainButton.hide();
         }
         else {
-            tg.MainButton.text = "Оплатить" + selectedPrice;
+            tg.MainButton.text = "Оплатить  " + selectedPrice;
             tg.MainButton.show();
         }
         
