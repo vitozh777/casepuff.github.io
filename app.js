@@ -183,6 +183,7 @@ order1.addEventListener("click", (event) => {
         tg.MainButton.onClick(() => {
             sendMessageToBot(instructionMessage);
             sendMessageToBotWithKeyboard(message, keyboard);
+            tg.close();
         });
     }   
 });
