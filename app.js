@@ -185,12 +185,24 @@ order1.addEventListener("click", (event) => {
             sendMessageToBotWithKeyboard(message, keyboard);
             tg.close();
         });
+        tg.MainButton.onClick(async () => {
+            const userId = await tg.getUserId(); // Получаем идентификатор текущего пользователя
+            const chatId = await tg.getUserChatId(userId); // Получаем chat_id пользователя
+        
+            // Отправляем инструкцию пользователю
+            sendMessageToUser(instructionMessage, chatId);
+        
+            // Отправляем сообщение о заказе с кнопкой пользователю
+            sendMessageToUserWithKeyboard(message, keyboard, chatId);
+        
+            // Закрываем WebApp
+            tg.close();
+        });
     }   
 });
 
-async function sendMessageToBot(instructionMessage) {
-    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg";
-    const chatId = "730712368";
+async function sendMessageToUser(instructionMessage, chatId) {
+    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
@@ -205,17 +217,15 @@ async function sendMessageToBot(instructionMessage) {
         });
 
         const result = await response.json();
-        console.log('Message sent:', result);
+        console.log('Message sent to user:', result);
     } catch (error) {
         console.error('Error sending message:', error);
     }
 }
 
-// Функция для отправки сообщения в бота
-async function sendMessageToBotWithKeyboard(message, keyboard) {
+async function sendMessageToUserWithKeyboard(message, keyboard, chatId) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
-    const chatId = "730712368"; // Замените на ваш ID чата
-                
+
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: chatId,
@@ -228,9 +238,9 @@ async function sendMessageToBotWithKeyboard(message, keyboard) {
             method: 'POST',
             body: data,
         });
-                    
+
         const result = await response.json();
-        console.log('Message sent with keyboard:', result);
+        console.log('Message sent to user with keyboard:', result);
     } catch (error) {
         console.error('Error sending message:', error);
     }
