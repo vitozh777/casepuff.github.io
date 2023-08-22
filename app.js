@@ -343,7 +343,7 @@ const keyboard = {
     inline_keyboard: [
         [
             {
-                text: "Оплатить через оператора",
+                text: "Открыть чат с оператором",
                 url: "https://t.me/ccelaryy",
             }
         ]
