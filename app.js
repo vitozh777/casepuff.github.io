@@ -334,8 +334,8 @@ const swiper = new Swiper('.swiper-container', {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     const itemName = "THE PUFFER CASE-TINTED AIR";
-        const selectedModel = document.querySelector(".model2.selected").textContent; // Получаем выбранную модель
-        const itemPrice = modelInfo2[selectedModel];
+        const selectedModel = document.querySelector(".model1.selected").textContent; // Получаем выбранную модель
+        const itemPrice = modelInfo1[selectedModel];
         
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
         
