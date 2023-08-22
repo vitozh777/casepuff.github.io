@@ -196,7 +196,7 @@ async function sendMessageToBotWithKeyboard(message, keyboard, instructionMessag
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: chatId,
-        text: message, instructionMessage,
+        text: `${message}\n\n${instructionMessage}`,
         reply_markup: JSON.stringify(keyboard),
     });
 
