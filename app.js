@@ -177,11 +177,11 @@ order1.addEventListener("click", (event) => {
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
-        
+        const instructionMessage = 'Скопируйте ваш заказ выше и отправьте в чат с оператором';
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
-            sendMessageToBotWithKeyboard(message, keyboard);
+            sendMessageToBotWithKeyboard(message, keyboard, instructionMessage);
         });
     }   
 });
@@ -344,7 +344,7 @@ const keyboard = {
         [
             {
                 text: "Оплатить через оператора",
-                url: "https://t.me/ccelaryy?text=Заказ%3A%20THE%20PUFFER%20CASE-BLACK%0AМодель%20телефона%3A%20iPhone%2014%20Pro%20Max%0AЦена%3A%202099₽",
+                url: "https://t.me/ccelaryy",
             }
         ]
     ]
