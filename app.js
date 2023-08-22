@@ -190,6 +190,7 @@ order1.addEventListener("click", (event) => {
 
 async function sendMessageToBot(instructionMessage) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg";
+    console.log(tg)
     const chatid = tg.initDataUnsafe.chat.id;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -214,6 +215,7 @@ async function sendMessageToBot(instructionMessage) {
 // Функция для отправки сообщения в бота
 async function sendMessageToBotWithKeyboard(message, keyboard) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
+    console.log(tg)
     const chatId = tg.initDataUnsafe.chat.id; // Замените на ваш ID чата
                 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
