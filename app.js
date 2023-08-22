@@ -159,7 +159,7 @@ const modelInfo1 = {
     "iPhone 6/7/8/SE20": "1699₽",
 };
 
-
+console.log(tg)
 // Добавьте обработчик события click для кнопки "Add"
 order1.disabled = false;
 order1.addEventListener("click", (event) => {
