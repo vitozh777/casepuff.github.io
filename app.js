@@ -177,7 +177,7 @@ order1.addEventListener("click", (event) => {
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
-        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const instructionMessage = 'Скопируйте ваш заказ и отправьте в чат с оператором';
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
