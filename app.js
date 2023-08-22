@@ -177,26 +177,48 @@ order1.addEventListener("click", (event) => {
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
-        const instructionMessage = 'Скопируйте ваш заказ выше и отправьте в чат с оператором';
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
-            sendMessageToBotWithKeyboard(message, keyboard, instructionMessage);
+            sendMessageToBot(instructionMessage);
+            sendMessageToBotWithKeyboard(message, keyboard);
         });
     }   
 });
 
+async function sendMessageToBot(instructionMessage) {
+    const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg";
+    const chatId = "730712368";
 
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const data = new URLSearchParams({
+        chat_id: chatId,
+        text: instructionMessage,
+    });
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: data,
+        });
+
+        const result = await response.json();
+        console.log('Message sent:', result);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+}
 
 // Функция для отправки сообщения в бота
-async function sendMessageToBotWithKeyboard(message, keyboard, instructionMessage) {
+async function sendMessageToBotWithKeyboard(message, keyboard) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
     const chatId = "730712368"; // Замените на ваш ID чата
                 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: chatId,
-        text: `${message}\n\n${instructionMessage}`,
+        text: message,
         reply_markup: JSON.stringify(keyboard),
     });
 
