@@ -159,14 +159,6 @@ const modelInfo1 = {
     "iPhone 6/7/8/SE20": "1699₽",
 };
 
-// Создаем инлайн клавиатуру с кнопкой "Связаться с оператором"
-const keyboard = {
-    inline_keyboard: [
-        [
-            { text: "Связаться с оператором", callback_data: "contact_operator" }
-        ]
-    ]
-};
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 order1.disabled = false;
@@ -345,6 +337,15 @@ const swiper = new Swiper('.swiper-container', {
     spaceBetween: 10,
     centeredSlides: true,
 });
+
+// Создаем инлайн клавиатуру с кнопкой "Связаться с оператором"
+const keyboard = {
+    inline_keyboard: [
+        [
+            { text: "Оплатить", callback_data: "contact_operator" }
+        ]
+    ]
+};
 
 
 
