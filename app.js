@@ -170,10 +170,14 @@ order1.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
-        
-        // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить " + selectedPrice;
-        tg.MainButton.show();
+
+        if (tg.MainButton.isVisible) {
+            tg.MainButton.hide();
+        }
+        else {
+            tg.MainButton.text = "Оплатить" + selectedPrice;
+            tg.MainButton.show();
+        }
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
