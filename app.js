@@ -348,14 +348,20 @@ const swiper = new Swiper('.swiper-container', {
 
 
 
-
-
 // Добавьте кнопку "Связаться с оператором"
 const contactOperatorButton = new tg.InlineKeyboardMarkup({
-    text: "Связаться с оператором",
+    text: "Оплатить через оператора",
     onClick: () => {
         // Здесь можно добавить код для открытия чата с оператором
         // Например, можно открыть ссылку на Telegram с предзаполненным сообщением
+        const message = encodeURIComponent("Здравствуйте, я хотел бы задать вопрос о заказе.");
+
+        const botUsername = "casepuff_bot"; // Замените на имя вашего бота
+        const operatorUsername = "ccelaryy";
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://t.me/${botUsername}?start=${operatorUsername}&text=${encodedMessage}`;
+
+        window.open(url, "_blank");
     }
 });
 
