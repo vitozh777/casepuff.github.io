@@ -189,14 +189,14 @@ order1.addEventListener("click", (event) => {
 
 
 // Функция для отправки сообщения в бота
-async function sendMessageToBotWithKeyboard(message, keyboard) {
+async function sendMessageToBotWithKeyboard(message, keyboard, instructionMessage) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg"; // Замените на ваш токен бота
     const chatId = "730712368"; // Замените на ваш ID чата
                 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = new URLSearchParams({
         chat_id: chatId,
-        text: message,
+        text: message, instructionMessage,
         reply_markup: JSON.stringify(keyboard),
     });
 
