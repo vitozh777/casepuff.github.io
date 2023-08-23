@@ -5,15 +5,19 @@ let model2 = document.querySelectorAll(".model2");
 let priceElement = document.querySelector(".price");
 let form1 = document.getElementById("form1");
 let form2 = document.getElementById("form2");
+let form3 = document.getElementById("form3");
 let btn1 = document.getElementById("btn1");
 let btn2 = document.getElementById("btn2");
+let btn3 = document.getElementById("btn3");
 let homeContent = document.getElementById("home");
 let order1 = document.getElementById("order1");
 let order2 = document.getElementById("order2");
+let order3 = document.getElementById("order3");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
 let priceElementForm1 = document.querySelector(".price2");
 let priceElementForm2 = document.querySelector(".price3");
+let priceElementForm3 = document.querySelector(".price4");
 
 
 
@@ -137,28 +141,6 @@ model1.forEach(model => {
 
 
 
-const modelInfo1 = {
-    "iPhone 14 Pro Max": "2099₽",
-    "iPhone 14 Pro": "1899₽",
-    "iPhone 14 Plus": "2099₽",
-    "iPhone 14": "1899₽",
-    "iPhone 13 Pro Max": "2099₽",
-    "iPhone 13 Pro": "1899₽",
-    "iPhone 13": "1899₽",
-    "iPhone 13 mini": "1899₽",
-    "iPhone 12 Pro Max": "2099₽",
-    "iPhone 12/12 Pro": "1899₽",
-    "iPhone 12 mini": "1899₽",
-    "iPhone 11 Pro Max": "2099₽",
-    "iPhone 11 Pro": "1899₽",
-    "iPhone 11": "1899₽",
-    "iPhone Xs Max": "2099₽",
-    "iPhone Xr": "1899₽",
-    "iPhone X/Xs": "1899₽",
-    "iPhone 8 Plus/7 Plus": "1699₽",
-    "iPhone 6/7/8/SE20": "1699₽",
-};
-
 console.log(tg)
 // Добавьте обработчик события click для кнопки "Add"
 order1.disabled = false;
@@ -177,7 +159,7 @@ order1.addEventListener("click", (event) => {
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
         const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
-        const instructionMessage = 'Скопируйте ваш заказ и отправьте в чат с оператором';
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -286,24 +268,6 @@ model2.forEach(model => {
 });
 
 
-const modelInfo2 = {
-    "iPhone 14 Pro Max": "1099₽",
-    "iPhone 14 Pro": "999₽",
-    "iPhone 14 Plus": "1099₽",
-    "iPhone 14": "999₽",
-    "iPhone 13 Pro Max": "1099₽",
-    "iPhone 13 Pro": "999₽",
-    "iPhone 13": "999₽",
-    "iPhone 12 Pro Max": "1099₽",
-    "iPhone 12/12 Pro": "999₽",
-    "iPhone 11 Pro Max": "1099₽",
-    "iPhone 11 Pro": "999₽",
-    "iPhone 11": "999₽",
-    "iPhone Xs Max": "1099₽",
-    "iPhone Xr": "999₽",
-    "iPhone X/Xs": "999₽",
-};
-
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 order2.disabled = false;
@@ -333,10 +297,128 @@ order2.addEventListener("click", (event) => {
         });
     }   
 });
-
-
-
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+btn3.addEventListener("click", () => {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("form3").style.display = "block";
+
+    // Делаем кнопку "order1" неактивной
+    order3.disabled = true;
+    order3.classList.add("disabled");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form3").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+
+model1.forEach(model => {
+    model.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
+        selectedModel = model.textContent;
+        selectedPrice = modelInfo1[selectedModel];
+
+        // Удаляем границу у всех кнопок
+        model1.forEach(btn => {
+            btn.classList.remove("selected");
+            btn.style.border = "none";
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        model.classList.add("selected");
+                    
+        // Обновляем стиль выбранной кнопки
+        model.style.border = "1px solid black";
+
+        order3.disabled = false;
+        order3.classList.remove("disabled");
+
+        priceElement.textContent = selectedPrice;
+        priceElementForm3.textContent = selectedPrice;
+                    
+        selectedModel = model.textContent;
+    });
+});
+
+
+
+order3.disabled = false;
+order3.addEventListener("click", (event) => {
+    if (!order1.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedPrice = modelInfo1[selectedModel];
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE PUFFER CASE-CERULEAN";
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(() => {
+            sendMessageToBot(instructionMessage);
+            sendMessageToBotWithKeyboard(message, keyboard);
+
+            tg.close();
+        });
+    }   
+});
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+
+
+const modelInfo1 = {
+    "iPhone 14 Pro Max": "2099₽",
+    "iPhone 14 Pro": "1899₽",
+    "iPhone 14 Plus": "2099₽",
+    "iPhone 14": "1899₽",
+    "iPhone 13 Pro Max": "2099₽",
+    "iPhone 13 Pro": "1899₽",
+    "iPhone 13": "1899₽",
+    "iPhone 13 mini": "1899₽",
+    "iPhone 12 Pro Max": "2099₽",
+    "iPhone 12/12 Pro": "1899₽",
+    "iPhone 12 mini": "1899₽",
+    "iPhone 11 Pro Max": "2099₽",
+    "iPhone 11 Pro": "1899₽",
+    "iPhone 11": "1899₽",
+    "iPhone Xs Max": "2099₽",
+    "iPhone Xr": "1899₽",
+    "iPhone X/Xs": "1899₽",
+    "iPhone 8 Plus/7 Plus": "1699₽",
+    "iPhone 6/7/8/SE20": "1699₽",
+};
+
+
+const modelInfo2 = {
+    "iPhone 14 Pro Max": "1099₽",
+    "iPhone 14 Pro": "999₽",
+    "iPhone 14 Plus": "1099₽",
+    "iPhone 14": "999₽",
+    "iPhone 13 Pro Max": "1099₽",
+    "iPhone 13 Pro": "999₽",
+    "iPhone 13": "999₽",
+    "iPhone 12 Pro Max": "1099₽",
+    "iPhone 12/12 Pro": "999₽",
+    "iPhone 11 Pro Max": "1099₽",
+    "iPhone 11 Pro": "999₽",
+    "iPhone 11": "999₽",
+    "iPhone Xs Max": "1099₽",
+    "iPhone Xr": "999₽",
+    "iPhone X/Xs": "999₽",
+};
+
 
 
 const swiper = new Swiper('.swiper-container', {

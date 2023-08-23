@@ -123,6 +123,13 @@ form {
 
 }
 
+.price4 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
 .p {
     color: black;
     font-size: 14px;
