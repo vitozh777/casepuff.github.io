@@ -307,24 +307,30 @@ const modelInfo2 = {
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 order2.disabled = false;
-order2.addEventListener("click", (event) => {
-    if (!order2.disabled) {
+order1.addEventListener("click", (event) => {
+    if (!order1.disabled) {
         event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model2.selected").textContent;
+        const selectedPrice = modelInfo2[selectedModel];
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-TINTED AIR";
-        const selectedModel = document.querySelector(".model2.selected").textContent; // Получаем выбранную модель
-        const itemPrice = modelInfo2[selectedModel];
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+        const instructionMessage = 'Скопируйте ваш заказ и отправьте в чат с оператором';
         
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${itemPrice}`;
-        
-        sendMessageToBot(message); // Вызов функции для отправки сообщения в бота
-        
-        if (tg.MainButton.isVisible) {
-            tg.MainButton.hide();
-        }
-        else {
-            tg.MainButton.text = "Оплатить";
-            tg.MainButton.show();
-        }
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(() => {
+            sendMessageToBot(instructionMessage);
+            sendMessageToBotWithKeyboard(message, keyboard);
+
+            tg.close();
+        });
     }   
 });
 
