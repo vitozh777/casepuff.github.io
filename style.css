@@ -207,6 +207,13 @@ form {
 
 }
 
+.zakaz {
+    color: rgb(255, 54, 54);
+    font-size: 14px;
+    text-align: left;
+    font-weight: bold;
+}
+
 .p {
     color: black;
     font-size: 14px;

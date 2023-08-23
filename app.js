@@ -733,6 +733,84 @@ order7.addEventListener("click", (event) => {
         });
     }   
 });
+//товар8zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+btn8.addEventListener("click", () => {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("form8").style.display = "block";
+
+    // Делаем кнопку "order3" неактивной
+    order8.disabled = true;
+    order8.classList.add("disabled");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("home").style.display = "block";
+        document.getElementById("form8").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+
+model1.forEach(model => {
+    model.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
+        selectedModel = model.textContent;
+        selectedPrice = modelInfo1[selectedModel];
+
+        // Удаляем границу у всех кнопок
+        model1.forEach(btn => {
+            btn.classList.remove("selected");
+            btn.style.border = "none";
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        model.classList.add("selected");
+                    
+        // Обновляем стиль выбранной кнопки
+        model.style.border = "1px solid black";
+
+        order8.disabled = false;
+        order8.classList.remove("disabled");
+
+        priceElement.textContent = selectedPrice;
+        priceElementForm8.textContent = selectedPrice;
+                    
+        selectedModel = model.textContent;
+    });
+});
+
+
+
+order8.disabled = false;
+order8.addEventListener("click", (event) => {
+    if (!order8.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedPrice = modelInfo1[selectedModel];
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE PUFFER CASE-LAVENDER";
+        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(() => {
+            sendMessageToBot(instructionMessage);
+            sendMessageToBotWithKeyboard(message, keyboard);
+
+            tg.close();
+        });
+    }   
+});
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 
 const modelInfo1 = {
