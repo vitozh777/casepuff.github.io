@@ -345,7 +345,7 @@ const keyboard = {
         [
             {
                 text: "Открыть чат с оператором",
-                url: "https://t.me/ccelaryy",
+                url: "https://t.me/operpuff",
             }
         ]
     ]
