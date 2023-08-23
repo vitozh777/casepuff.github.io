@@ -109,6 +109,13 @@ form {
     margin-top: 30px; /* Отступ сверху */
 }
 
+.price1 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
 .price2 {
     color: rgb(110, 110, 110);
     text-align: left;
@@ -131,6 +138,69 @@ form {
 }
 
 .price5 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price6 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price7 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price8 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price9 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price10 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price11 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price12 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price13 {
+    color: rgb(110, 110, 110);
+    text-align: left;
+    font-size: 14px;
+
+}
+
+.price14 {
     color: rgb(110, 110, 110);
     text-align: left;
     font-size: 14px;
@@ -167,6 +237,19 @@ form {
 }
 
 .model2 {
+    color: black;
+    font-size: 14px;
+    background-color:rgb(230, 230, 230);
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    border: 1px solid var(--background-secondary);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.model3 {
     color: black;
     font-size: 14px;
     background-color:rgb(230, 230, 230);
