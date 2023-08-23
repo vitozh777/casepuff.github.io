@@ -307,7 +307,7 @@ const modelInfo2 = {
 
 // Добавьте обработчик события click для кнопки "Add to Bag"
 order2.disabled = false;
-order1.addEventListener("click", (event) => {
+order2.addEventListener("click", (event) => {
     if (!order1.disabled) {
         event.preventDefault();
         
