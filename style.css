@@ -106,7 +106,7 @@ form {
     text-align: left;
     font-size: 16px;
     font-weight: bold;
-    margin-top: 30px; /* Отступ сверху */
+    margin-top: 10px; /* Отступ сверху */
 }
 
 .price1 {
@@ -313,6 +313,24 @@ form {
     transition: opacity 0.2s ease-in-out;
 }
 
+.y {
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+    padding: 0 5px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
 
 .order {
     display: flex;
@@ -368,6 +386,7 @@ form {
     text-align: left; /* Текст начинается слева */
     white-space: normal; /* Перенос слов на следующую строку */
     margin: 5px 10px;
+    margin-bottom: 10px;
 }
 
 
