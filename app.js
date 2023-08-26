@@ -217,10 +217,10 @@ order1.addEventListener("click", (event) => {
             Общая цена: ${totalPrice}
         `;
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
