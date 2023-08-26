@@ -586,13 +586,12 @@ model1.forEach(model => {
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
 
-        order5.disabled = false;
-        order5.classList.remove("disabled");
-
         priceElement.textContent = selectedPrice;
         priceElementForm5.textContent = selectedPrice;
                     
         selectedModel = model.textContent;
+
+        updateOrder5ButtonState(); // Проверка состояния кнопки order5
     });
 });
 
@@ -601,8 +600,8 @@ model4.forEach(model => {
     model.addEventListener("click", (event) => {
         event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     
-        selectedModel = model.textContent;
-        selectedPrice = modelInfo4[selectedModel];
+        selectedModelAir = model.textContent;
+        selectedPrice = modelInfo4[selectedModelAir];
 
         // Удаляем границу у всех кнопок
         model4.forEach(btn => {
@@ -616,16 +615,25 @@ model4.forEach(model => {
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
 
-        order14.disabled = false;
-        order14.classList.remove("disabled");
-
         priceElement.textContent = selectedPrice;
         priceElementForm50.textContent = selectedPrice;
                     
-        selectedModel = model.textContent;
+        selectedModelAir = model.textContent;
+
+        updateOrder5ButtonState(); // Проверка состояния кнопки order5
     });
 });
 
+
+function updateOrder5ButtonState() {
+    if (selectedModel && selectedModelAir) {
+        order5.disabled = false;
+        order5.classList.remove("disabled");
+    } else {
+        order5.disabled = true;
+        order5.classList.add("disabled");
+    }
+}
 
 
 order5.disabled = false;
