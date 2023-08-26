@@ -362,10 +362,10 @@ order2.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -450,10 +450,10 @@ order3.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -539,10 +539,10 @@ order4.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -668,10 +668,10 @@ order5.addEventListener("click", (event) => {
             Общая цена: ${totalPriceCompl}
         `;
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -765,10 +765,10 @@ order6.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -854,10 +854,10 @@ order7.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -942,10 +942,10 @@ order8.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1030,10 +1030,10 @@ order9.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1119,10 +1119,10 @@ order10.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1207,10 +1207,10 @@ order11.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1295,10 +1295,10 @@ order12.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1384,10 +1384,10 @@ order13.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
@@ -1473,10 +1473,10 @@ order14.addEventListener("click", (event) => {
         `;
         
         // Добавьте обработчик для кнопки MainButton
-        tg.MainButton.onClick(() => {
-            sendMessageToBot(instructionMessage);
-            sendMessageToBotWithKeyboard(message, keyboard);
-
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
             tg.close();
         });
     }   
