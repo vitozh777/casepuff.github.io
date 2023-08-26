@@ -214,7 +214,7 @@ order1.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            *Общая цена: ${totalPrice}*
         `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
