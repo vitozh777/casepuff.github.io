@@ -203,7 +203,7 @@ order1.addEventListener("click", (event) => {
         const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
@@ -341,15 +341,25 @@ order2.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model2.selected").textContent;
         const selectedPrice = modelInfo2[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-TINTED AIR";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -419,15 +429,25 @@ order3.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора ";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-CERULEAN";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -498,15 +518,25 @@ order4.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model2.selected").textContent;
         const selectedPrice = modelInfo2[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-AIR";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -626,7 +656,7 @@ order5.addEventListener("click", (event) => {
             Цена: ${selectedPrice}
             Модель наушников: ${selectedModelAir}
             Цена: ${selectedPriceAir}
-            Цена доставки: ${deliveryPrice}
+            Доставка: ${deliveryPrice}
             <b>Общая цена: ${totalPriceCompl}<b>
         `;
         // Добавьте обработчик для кнопки MainButton
@@ -706,15 +736,25 @@ order6.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-MARSHMALLOW";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -785,15 +825,25 @@ order7.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model3.selected").textContent;
         const selectedPrice = modelInfo3[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE SOAP CASE-BLACK MANHATTAN";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -863,15 +913,25 @@ order8.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-LAVENDER";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -941,15 +1001,25 @@ order9.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-RED";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -1020,15 +1090,25 @@ order10.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model3.selected").textContent;
         const selectedPrice = modelInfo3[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE SOAP CASE-MILK";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -1098,15 +1178,25 @@ order11.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-RED HEARTS";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -1176,15 +1266,25 @@ order12.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-GREEN";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -1255,15 +1355,25 @@ order13.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model4.selected").textContent;
         const selectedPrice = modelInfo4[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE AIRPODS CASE-BLACK";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель наушников: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -1334,15 +1444,25 @@ order14.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model4.selected").textContent;
         const selectedPrice = modelInfo4[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE AIRPODS CASE-GREY";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель наушников: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
