@@ -197,6 +197,10 @@ order1.addEventListener("click", (event) => {
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
         tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
@@ -204,9 +208,14 @@ order1.addEventListener("click", (event) => {
         
         // Сохраняем выбранные данные для передачи боту
         const itemName = "THE PUFFER CASE-BLACK";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
-        
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            <b>Общая цена: ${totalPrice}<b>
+        `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
             sendMessageToBot(instructionMessage);
@@ -216,6 +225,14 @@ order1.addEventListener("click", (event) => {
         });
     }   
 });
+
+// Функция для вычисления общей цены
+function calculateTotalPrice(price1, price2) {
+    const price1Numeric = parseInt(price1.replace("₽", "").replace(",", ""));
+    const price2Numeric = parseInt(price2.replace("₽", "").replace(",", ""));
+    const total = price1Numeric + price2Numeric;
+    return total + "₽";
+}
 
 async function sendMessageToBot(instructionMessage) {
     const botToken = "6311077393:AAGEGc7ByWsP1KewwprCK8zWxwUCzN6tYEg";
@@ -594,7 +611,7 @@ order5.addEventListener("click", (event) => {
 
         // Вычисляем общую цену
         const deliveryPrice = "250₽";
-        const totalPrice = calculateTotalPrice(selectedPrice, selectedPriceAir, deliveryPrice);
+        const totalPriceCompl = calculateTotalComplPrice(selectedPrice, selectedPriceAir, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
         tg.MainButton.text = "Оплатить через оператора ";
@@ -606,11 +623,11 @@ order5.addEventListener("click", (event) => {
         const message = `
             Заказ: ${itemName}
             Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
             Модель наушников: ${selectedModelAir}
-            Цена телефона: ${selectedPrice}
-            Цена наушников: ${selectedPriceAir}
+            Цена: ${selectedPriceAir}
             Цена доставки: ${deliveryPrice}
-            Общая цена: ${totalPrice}
+            <b>Общая цена: ${totalPriceCompl}<b>
         `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -623,7 +640,7 @@ order5.addEventListener("click", (event) => {
 });
 
 // Функция для вычисления общей цены
-function calculateTotalPrice(price1, price2, price3) {
+function calculateTotalComplPrice(price1, price2, price3) {
     const price1Numeric = parseInt(price1.replace("₽", "").replace(",", ""));
     const price2Numeric = parseInt(price2.replace("₽", "").replace(",", ""));
     const price3Numeric = parseInt(price3.replace("₽", "").replace(",", ""));
