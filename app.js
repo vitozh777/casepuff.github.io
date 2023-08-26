@@ -214,7 +214,7 @@ order1.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            *Общая цена: ${totalPrice}*
+            Общая цена: ${totalPrice}
         `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -358,7 +358,7 @@ order2.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -446,7 +446,7 @@ order3.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -535,7 +535,7 @@ order4.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -665,7 +665,7 @@ order5.addEventListener("click", (event) => {
             Модель наушников: ${selectedModelAir}
             Цена: ${selectedPriceAir}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPriceCompl}<b>
+            Общая цена: ${totalPriceCompl}
         `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
@@ -761,7 +761,7 @@ order6.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -850,7 +850,7 @@ order7.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -938,7 +938,7 @@ order8.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1026,7 +1026,7 @@ order9.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1115,7 +1115,7 @@ order10.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1203,7 +1203,7 @@ order11.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1291,7 +1291,7 @@ order12.addEventListener("click", (event) => {
             Модель телефона: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1380,7 +1380,7 @@ order13.addEventListener("click", (event) => {
             Модель наушников: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
@@ -1469,7 +1469,7 @@ order14.addEventListener("click", (event) => {
             Модель наушников: ${selectedModel}
             Цена: ${selectedPrice}
             Доставка: ${deliveryPrice}
-            <b>Общая цена: ${totalPrice}<b>
+            Общая цена: ${totalPrice}
         `;
         
         // Добавьте обработчик для кнопки MainButton
