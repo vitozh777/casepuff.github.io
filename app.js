@@ -55,6 +55,7 @@ let priceElementForm2 = document.querySelector(".price2");
 let priceElementForm3 = document.querySelector(".price3");
 let priceElementForm4 = document.querySelector(".price4");
 let priceElementForm5 = document.querySelector(".price5");
+let priceElementForm50 = document.querySelector(".price50");
 let priceElementForm6 = document.querySelector(".price6");
 let priceElementForm7 = document.querySelector(".price7");
 let priceElementForm8 = document.querySelector(".price8");
@@ -549,6 +550,36 @@ model1.forEach(model => {
 });
 
 
+model4.forEach(model => {
+    model.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
+        selectedModel = model.textContent;
+        selectedPrice = modelInfo4[selectedModel];
+
+        // Удаляем границу у всех кнопок
+        model4.forEach(btn => {
+            btn.classList.remove("selected");
+            btn.style.border = "none";
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        model.classList.add("selected");
+                    
+        // Обновляем стиль выбранной кнопки
+        model.style.border = "1px solid black";
+
+        order14.disabled = false;
+        order14.classList.remove("disabled");
+
+        priceElement.textContent = selectedPrice;
+        priceElementForm50.textContent = selectedPrice;
+                    
+        selectedModel = model.textContent;
+    });
+});
+
+
 
 order5.disabled = false;
 order5.addEventListener("click", (event) => {
@@ -557,17 +588,28 @@ order5.addEventListener("click", (event) => {
         
         // Получаем выбранную модель и цену
         const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedModelAir = document.querySelector(".model4.selected").textContent;
         const selectedPrice = modelInfo1[selectedModel];
+        const selectedPriceAir = modelInfo4[selectedModelAir];
+
+        // Вычисляем общую цену
+        const totalPrice = calculateTotalPrice(selectedPrice, selectedPriceAir);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить через оператора " + selectedPrice;
+        tg.MainButton.text = "Оплатить через оператора ";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
-        const itemName = "THE PUFFER CASE-COFFEE";
-        const message = `Заказ: ${itemName}\nМодель телефона: ${selectedModel}\nЦена: ${selectedPrice}`;
+        const itemName = "THE PUFFER CASE-КОМПЛЕКТ";
         const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
-        
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Модель наушников: ${selectedModelAir}
+            Цена телефона: ${selectedPrice}
+            Цена наушников: ${selectedPriceAir}
+            Общая цена: ${totalPrice}
+        `;
         // Добавьте обработчик для кнопки MainButton
         tg.MainButton.onClick(() => {
             sendMessageToBot(instructionMessage);
@@ -577,6 +619,14 @@ order5.addEventListener("click", (event) => {
         });
     }   
 });
+
+// Функция для вычисления общей цены
+function calculateTotalPrice(price1, price2) {
+    const price1Numeric = parseInt(price1.replace("₽", "").replace(",", ""));
+    const price2Numeric = parseInt(price2.replace("₽", "").replace(",", ""));
+    const total = price1Numeric + price2Numeric;
+    return total + "₽";
+}
 //товар6zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 btn6.addEventListener("click", () => {
     document.getElementById("home").style.display = "none";
