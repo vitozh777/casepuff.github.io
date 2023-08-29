@@ -2659,9 +2659,8 @@ const modelInfo3 = {
 
 const modelInfo4 = {
     "AirPods 1/2": "999₽",
-    "AirPods Pro": "999₽",
+    "AirPods Pro/Pro(2)": "999₽",
     "AirPods 3": "999₽",
-    "AirPods Pro(2)": "999₽",
 };
 
 
