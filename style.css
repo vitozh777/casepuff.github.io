@@ -402,6 +402,32 @@ form {
     flex-shrink: 0;
 }
 
+.modelcompl {
+    color: black;
+    font-size: 14px;
+    background-color:rgb(230, 230, 230);
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    border: 1px solid var(--background-secondary);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.modelcomplair {
+    color: black;
+    font-size: 14px;
+    background-color:rgb(230, 230, 230);
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    border: 1px solid var(--background-secondary);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
 .m {
     color: black;
     padding: 0;

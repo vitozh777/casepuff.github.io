@@ -4,6 +4,8 @@ let model1 = document.querySelectorAll(".model1");
 let model2 = document.querySelectorAll(".model2");
 let model3 = document.querySelectorAll(".model3");
 let model4 = document.querySelectorAll(".model4");
+let modelcompl = document.querySelectorAll(".modelcompl");
+let modelcomplair = document.querySelectorAll(".modelcomplair");
 let priceElement = document.querySelector(".price");
 let form1 = document.getElementById("form1");
 let form2 = document.getElementById("form2");
@@ -628,15 +630,15 @@ btn5.addEventListener("click", () => {
 });
 
 
-model1.forEach(model => {
+modelcompl.forEach(model => {
     model.addEventListener("click", (event) => {
         event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     
         selectedModel = model.textContent;
-        selectedPrice = modelInfo1[selectedModel];
+        selectedPrice = modelcomplInfo5[selectedModel];
 
         // Удаляем границу у всех кнопок
-        model1.forEach(btn => {
+        modelcompl.forEach(btn => {
             btn.classList.remove("selected");
             btn.style.border = "none";
         });
@@ -657,15 +659,15 @@ model1.forEach(model => {
 });
 
 
-model4.forEach(model => {
+modelcomplair.forEach(model => {
     model.addEventListener("click", (event) => {
         event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
                     
         selectedModelAir = model.textContent;
-        selectedPrice = modelInfo4[selectedModelAir];
+        selectedPrice = modelcomplairInfo6[selectedModelAir];
 
         // Удаляем границу у всех кнопок
-        model4.forEach(btn => {
+        modelcomplair.forEach(btn => {
             btn.classList.remove("selected");
             btn.style.border = "none";
         });
@@ -703,10 +705,10 @@ order5.addEventListener("click", (event) => {
         event.preventDefault();
         
         // Получаем выбранную модель и цену
-        const selectedModel = document.querySelector(".model1.selected").textContent;
-        const selectedModelAir = document.querySelector(".model4.selected").textContent;
-        const selectedPrice = modelInfo1[selectedModel];
-        const selectedPriceAir = modelInfo4[selectedModelAir];
+        const selectedModel = document.querySelector(".modelcompl.selected").textContent;
+        const selectedModelAir = document.querySelector(".modelcomplair.selected").textContent;
+        const selectedPrice = modelcomplInfo5[selectedModel];
+        const selectedPriceAir = modelcomplairInfo6[selectedModelAir];
 
         // Вычисляем общую цену
         const deliveryPrice = "250₽";
@@ -722,9 +724,9 @@ order5.addEventListener("click", (event) => {
         const message = `
             Заказ: ${itemName}
             Модель телефона: ${selectedModel}
-            Цена: ${selectedPrice}
+            Цена со скидкой: ${selectedPrice}
             Модель наушников: ${selectedModelAir}
-            Цена: ${selectedPriceAir}
+            Цена со скидкой: ${selectedPriceAir}
             Доставка: ${deliveryPrice}
             Общая цена: ${totalPriceCompl}
         `;
@@ -2663,6 +2665,33 @@ const modelInfo4 = {
     "AirPods 3": "999₽",
 };
 
+
+const modelcomplInfo5 = {
+    "iPhone 14 Pro Max": "1890₽",
+    "iPhone 14 Pro": "1710₽",
+    "iPhone 14 Plus": "1890₽",
+    "iPhone 14": "1710₽",
+    "iPhone 13 Pro Max": "1890₽",
+    "iPhone 13 Pro": "1710₽",
+    "iPhone 13": "1710₽",
+    "iPhone 13 mini": "1710₽",
+    "iPhone 12 Pro Max": "1890₽",
+    "iPhone 12/12 Pro": "1710₽",
+    "iPhone 12 mini": "1710₽",
+    "iPhone 11 Pro Max": "1890₽",
+    "iPhone 11 Pro": "1710₽",
+    "iPhone 11": "1710₽",
+    "iPhone Xs Max": "1890₽",
+    "iPhone Xr": "1710₽",
+    "iPhone X/Xs": "1710₽",
+    "iPhone 8 Plus/7 Plus": "1530₽",
+    "iPhone 6/7/8/SE20": "1530₽",
+};
+const modelcomplairInfo6 = {
+    "AirPods 1/2": "899₽",
+    "AirPods Pro/Pro(2)": "899₽",
+    "AirPods 3": "899₽",
+};
 
 
 const swiper = new Swiper('.swiper-container', {
