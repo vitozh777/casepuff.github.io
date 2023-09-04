@@ -122,7 +122,7 @@ const backButton = Telegram.WebApp.BackButton;
 const tgkanal = document.getElementById("tgkanal");
 
 tgkanal.addEventListener("click", () => {
-    window.open("https://t.me/casepuff");
+    window.open("https://t.me/casepuff", "_blank");
 });
 
 
@@ -2615,92 +2615,90 @@ order26.addEventListener("click", (event) => {
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 
 const modelInfo1 = {
-    "iPhone 14 Pro Max": "1680₽",
-    "iPhone 14 Pro": "1520₽",
-    "iPhone 14 Plus": "1680₽",
-    "iPhone 14": "1520₽",
-    "iPhone 13 Pro Max": "1680₽",
-    "iPhone 13 Pro": "1520₽",
-    "iPhone 13": "1520₽",
-    "iPhone 13 mini": "1520₽",
-    "iPhone 12 Pro Max": "1680₽",
-    "iPhone 12/12 Pro": "1520₽",
-    "iPhone 12 mini": "1520₽",
-    "iPhone 11 Pro Max": "1680₽",
-    "iPhone 11 Pro": "1520₽",
-    "iPhone 11": "1520₽",
-    "iPhone Xs Max": "1680₽",
-    "iPhone Xr": "1520₽",
-    "iPhone X/Xs": "1520₽",
-    "iPhone 8 Plus/7 Plus": "1360₽",
-    "iPhone 6/7/8/SE20": "1360₽",
+    "iPhone 14 Pro Max": "2099₽",
+    "iPhone 14 Pro": "1899₽",
+    "iPhone 14 Plus": "2099₽",
+    "iPhone 14": "1899₽",
+    "iPhone 13 Pro Max": "2099₽",
+    "iPhone 13 Pro": "1899₽",
+    "iPhone 13": "1899₽",
+    "iPhone 13 mini": "1899₽",
+    "iPhone 12 Pro Max": "2099₽",
+    "iPhone 12/12 Pro": "1899₽",
+    "iPhone 12 mini": "1899₽",
+    "iPhone 11 Pro Max": "2099₽",
+    "iPhone 11 Pro": "1899₽",
+    "iPhone 11": "1899₽",
+    "iPhone Xs Max": "2099₽",
+    "iPhone Xr": "1899₽",
+    "iPhone X/Xs": "1899₽",
+    "iPhone 8 Plus/7 Plus": "1699₽",
+    "iPhone 6/7/8/SE20": "1699₽",
 };
 
 
 const modelInfo2 = {
-    "iPhone 14 Pro Max": "880₽",
-    "iPhone 14 Pro": "800₽",
-    "iPhone 14 Plus": "880₽",
-    "iPhone 14": "800₽",
-    "iPhone 13 Pro Max": "880₽",
-    "iPhone 13 Pro": "800₽",
-    "iPhone 13": "800₽",
-    "iPhone 12 Pro Max": "880₽",
-    "iPhone 12/12 Pro": "800₽",
-    "iPhone 11 Pro Max": "880₽",
-    "iPhone 11 Pro": "800₽",
-    "iPhone 11": "800₽",
-    "iPhone Xs Max": "880₽",
-    "iPhone Xr": "800₽",
-    "iPhone X/Xs": "800₽",
+    "iPhone 14 Pro Max": "1099₽",
+    "iPhone 14 Pro": "999₽",
+    "iPhone 14 Plus": "1099₽",
+    "iPhone 14": "999₽",
+    "iPhone 13 Pro Max": "1099₽",
+    "iPhone 13 Pro": "999₽",
+    "iPhone 13": "999₽",
+    "iPhone 12 Pro Max": "1099₽",
+    "iPhone 12/12 Pro": "999₽",
+    "iPhone 11 Pro Max": "1099₽",
+    "iPhone 11 Pro": "999₽",
+    "iPhone 11": "999₽",
+    "iPhone Xs Max": "1099₽",
+    "iPhone Xr": "999₽",
+    "iPhone X/Xs": "999₽",
 };
 
 
 const modelInfo3 = {
-    "iPhone 13 Pro Max": "1520₽",
-    "iPhone 13 Pro": "1360₽",
-    "iPhone 13": "1360₽",
-    "iPhone 12 Pro Max": "1520₽",
-    "iPhone 12/12 Pro": "1360₽",
-    "iPhone 11": "1360₽",
+    "iPhone 13 Pro Max": "1899₽",
+    "iPhone 13 Pro": "1699₽",
+    "iPhone 13": "1699₽",
+    "iPhone 12 Pro Max": "1899₽",
+    "iPhone 12/12 Pro": "1699₽",
+    "iPhone 11": "1699₽",
 };
 
 
 const modelInfo4 = {
-    "AirPods 1/2": "800₽",
-    "AirPods Pro/Pro(2)": "800₽",
-    "AirPods 3": "800₽",
+    "AirPods 1/2": "999₽",
+    "AirPods Pro/Pro(2)": "999₽",
+    "AirPods 3": "999₽",
 };
 
 
 const modelcomplInfo5 = {
-    "iPhone 14 Pro Max": "1680₽",
-    "iPhone 14 Pro": "1520₽",
-    "iPhone 14 Plus": "1680₽",
-    "iPhone 14": "1520₽",
-    "iPhone 13 Pro Max": "1680₽",
-    "iPhone 13 Pro": "1520₽",
-    "iPhone 13": "1520₽",
-    "iPhone 13 mini": "1520₽",
-    "iPhone 12 Pro Max": "1680₽",
-    "iPhone 12/12 Pro": "1520₽",
-    "iPhone 12 mini": "1520₽",
-    "iPhone 11 Pro Max": "1680₽",
-    "iPhone 11 Pro": "1520₽",
-    "iPhone 11": "1520₽",
-    "iPhone Xs Max": "1680₽",
-    "iPhone Xr": "1520₽",
-    "iPhone X/Xs": "1520₽",
-    "iPhone 8 Plus/7 Plus": "1360₽",
-    "iPhone 6/7/8/SE20": "1360₽",
+    "iPhone 14 Pro Max": "1890₽",
+    "iPhone 14 Pro": "1710₽",
+    "iPhone 14 Plus": "1890₽",
+    "iPhone 14": "1710₽",
+    "iPhone 13 Pro Max": "1890₽",
+    "iPhone 13 Pro": "1710₽",
+    "iPhone 13": "1710₽",
+    "iPhone 13 mini": "1710₽",
+    "iPhone 12 Pro Max": "1890₽",
+    "iPhone 12/12 Pro": "1710₽",
+    "iPhone 12 mini": "1710₽",
+    "iPhone 11 Pro Max": "1890₽",
+    "iPhone 11 Pro": "1710₽",
+    "iPhone 11": "1710₽",
+    "iPhone Xs Max": "1890₽",
+    "iPhone Xr": "1710₽",
+    "iPhone X/Xs": "1710₽",
+    "iPhone 8 Plus/7 Plus": "1530₽",
+    "iPhone 6/7/8/SE20": "1530₽",
 };
 const modelcomplairInfo6 = {
-    "AirPods 1/2": "799₽",
-    "AirPods Pro/Pro(2)": "799₽",
-    "AirPods 3": "799₽",
+    "AirPods 1/2": "899₽",
+    "AirPods Pro/Pro(2)": "899₽",
+    "AirPods 3": "899₽",
 };
-
-
 
 
 const swiper = new Swiper('.swiper-container', {
@@ -2720,23 +2718,6 @@ const keyboard = {
         ]
     ]
 };
-
-
-
-// Показать окошко sale при открытии webapp
-tg.onLoaded(() => {
-    const saleOverlay = document.getElementById("saleOverlay");
-    saleOverlay.style.display = "flex";
-});
-
-// Закрыть окошко sale
-function closeSale() {
-    const saleOverlay = document.getElementById("saleOverlay");
-    saleOverlay.style.display = "none";
-}
-
-
-
 
 
 tg.expand();
