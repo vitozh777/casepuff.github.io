@@ -2815,6 +2815,10 @@ order26.addEventListener("click", (event) => {
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
 
 const modelInfo1 = {
+    "iPhone 15 Pro Max": "2099₽",
+    "iPhone 15 Pro": "1899₽",
+    "iPhone 15 Plus": "2099₽",
+    "iPhone 15": "1899₽",
     "iPhone 14 Pro Max": "2099₽",
     "iPhone 14 Pro": "1899₽",
     "iPhone 14 Plus": "2099₽",
@@ -2829,9 +2833,9 @@ const modelInfo1 = {
     "iPhone 11 Pro Max": "2099₽",
     "iPhone 11 Pro": "1899₽",
     "iPhone 11": "1899₽",
-    "iPhone Xs Max": "2099₽",
-    "iPhone Xr": "1899₽",
-    "iPhone X/Xs": "1899₽",
+    "iPhone Xs Max": "1899₽",
+    "iPhone Xr": "1699₽",
+    "iPhone X/Xs": "1699₽",
     "iPhone 8 Plus/7 Plus": "1699₽",
     "iPhone 6/7/8/SE20": "1699₽",
 };
@@ -2874,6 +2878,10 @@ const modelInfo4 = {
 
 
 const modelcomplInfo5 = {
+    "iPhone 15 Pro Max": "1890₽",
+    "iPhone 15 Pro": "1710₽",
+    "iPhone 15 Plus": "1890₽",
+    "iPhone 15": "1710₽",
     "iPhone 14 Pro Max": "1890₽",
     "iPhone 14 Pro": "1710₽",
     "iPhone 14 Plus": "1890₽",
@@ -2888,9 +2896,9 @@ const modelcomplInfo5 = {
     "iPhone 11 Pro Max": "1890₽",
     "iPhone 11 Pro": "1710₽",
     "iPhone 11": "1710₽",
-    "iPhone Xs Max": "1890₽",
-    "iPhone Xr": "1710₽",
-    "iPhone X/Xs": "1710₽",
+    "iPhone Xs Max": "1710₽",
+    "iPhone Xr": "1530₽",
+    "iPhone X/Xs": "1530₽",
     "iPhone 8 Plus/7 Plus": "1530₽",
     "iPhone 6/7/8/SE20": "1530₽",
 };
