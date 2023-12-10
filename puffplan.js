@@ -300,9 +300,9 @@ pufforder1.addEventListener("click", (event) => {
 });
 
 const razmerInfo1 = {
-    "S": "2800₽",
-    "M": "2800₽",
-    "L": "2800₽",
+    "S": "2290₽",
+    "M": "2290₽",
+    "L": "2290₽",
 };
 
 
