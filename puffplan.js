@@ -435,11 +435,11 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
 
 
         order1.orderinactive = false;
@@ -456,9 +456,9 @@ model1.forEach(model => {
 
 console.log(tg)
 // Добавьте обработчик события click для кнопки "Add"
-order1.orderinactive = false;
+order1.disabled = false;
 order1.addEventListener("click", (event) => {
-    if (!order1.orderinactive) {
+    if (!order1.disabled) {
         event.preventDefault();
         
         // Получаем выбранную модель и цену
