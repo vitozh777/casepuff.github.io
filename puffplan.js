@@ -577,11 +577,11 @@ model2.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model2.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
 
 
         order2.orderinactive = false;
@@ -663,12 +663,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -751,12 +751,12 @@ model2.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model2.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -840,12 +840,12 @@ modelcompl.forEach(model => {
 
         // Удаляем границу у всех кнопок
         modelcompl.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -869,12 +869,12 @@ modelcomplair.forEach(model => {
 
         // Удаляем границу у всех кнопок
         modelcomplair.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -978,12 +978,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1066,12 +1066,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1155,12 +1155,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1243,12 +1243,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1331,12 +1331,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1420,12 +1420,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1508,12 +1508,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1596,12 +1596,12 @@ model4.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model4.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1685,12 +1685,12 @@ model4.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model4.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1774,12 +1774,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1862,12 +1862,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -1950,12 +1950,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2038,12 +2038,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2126,12 +2126,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2214,12 +2214,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2302,12 +2302,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2391,12 +2391,12 @@ model1.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model1.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2479,12 +2479,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2568,12 +2568,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2657,12 +2657,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
@@ -2746,12 +2746,12 @@ model3.forEach(model => {
 
         // Удаляем границу у всех кнопок
         model3.forEach(btn => {
-            btn.classList.remove("orderactive");
+            btn.classList.remove("selected");
             btn.style.border = "none";
         });
 
         // Добавляем класс selected к выбранной кнопке
-        model.classList.add("orderactive");
+        model.classList.add("selected");
                     
         // Обновляем стиль выбранной кнопки
         model.style.border = "1px solid black";
