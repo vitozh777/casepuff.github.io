@@ -456,9 +456,9 @@ model1.forEach(model => {
 
 console.log(tg)
 // Добавьте обработчик события click для кнопки "Add"
-order1.disabled = false;
+order1.orderinactive = false;
 order1.addEventListener("click", (event) => {
-    if (!order1.disabled) {
+    if (!order1.orderinactive) {
         event.preventDefault();
         
         // Получаем выбранную модель и цену
