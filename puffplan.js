@@ -190,6 +190,14 @@ pufferplanetButton.addEventListener("click", () => {
 
 
 
+var video = document.getElementById("myVideo");
+
+  // Воспроизводим видео при загрузке страницы
+window.onload = function() {
+    video.play();
+};
+
+
 
 
 
@@ -2921,6 +2929,11 @@ const keyboard = {
         ]
     ]
 };
+
+
+
+
+
 
 
 tg.expand();
