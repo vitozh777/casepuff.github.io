@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
         <meta name="MobileOptimized" content="176">
         <meta name="robots" content="noindex, nofollow">
+        <title>Автоматическое воспроизведение видео без контролов</title>
 
     </head>
     <body>
@@ -36,7 +37,11 @@
             <img class="ph1" src="ph1.PNG" id="ph1" width="100%">
             <button class="button" id="puffplanet"><span>ОДЕЖДА</span></button>
 
-            <img src="ph2.PNG" alt="PPLOGO" width="110%">
+            <video muted playsinline width="110%" height="auto" id="myVideo">
+                <source src="0001-0080.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег video.
+            </video>
+
             <button class="button" id="casepuff"><span>ЧЕХЛЫ</span></button>
         </div>
 
@@ -213,6 +218,12 @@
                     </a>
                 </div>
             </div>
+
+            <video class="video2" id="myVideo2" width="110%" muted playsinline>
+                <source src="0001-0050.mp4" type="video/quicktime">
+                Ваш браузер не поддерживает тег video.
+            </video>
+
             <div class="sections">
                 <a class="section" id="all">All</a>
                 <a class="section" id="puffer">THE PUFFER CASE</a>

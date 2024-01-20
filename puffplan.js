@@ -190,8 +190,42 @@ pufferplanetButton.addEventListener("click", () => {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('myVideo');
+    var secondVideo = document.getElementById('myVideo2');
+    var isVideoPlayed = false;
 
+    // Показываем первое видео сразу
+    video.style.display = 'block';
 
+    // Задержка в 1 секунду перед воспроизведением первого видео
+    setTimeout(function() {
+        // Проверяем, что видео не было воспроизведено ранее
+        if (!isVideoPlayed) {
+            video.play().then(function() {
+                // Видео успешно воспроизведено
+                isVideoPlayed = true;
+            }).catch(function(error) {
+                // Воспроизведение может вызвать ошибку, если видео уже воспроизводится.
+                // Игнорируем эту ошибку.
+            });
+        }
+    }, 1000);
+
+    // Обработчик события при появлении контейнера
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Воспроизводим второе видео, когда контейнер становится видимым
+                secondVideo.play().catch(function(error) {
+                    // Воспроизведение может вызвать ошибку, если видео уже воспроизводится.
+                    // Игнорируем эту ошибку.
+                });
+            }
+        });
+    });
+    observer.observe(document.getElementById('thepuffercase'));
+});
 
 
 
@@ -2921,6 +2955,11 @@ const keyboard = {
         ]
     ]
 };
+
+
+
+
+
 
 
 tg.expand();
