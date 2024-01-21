@@ -2944,6 +2944,17 @@ const swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
 });
 
+function openOverlayPP(imageSrc) {
+    document.getElementById('overlayPPImage').src = imageSrc;
+    document.getElementById('overlayPP').style.display = 'flex';
+}
+
+function closeOverlayPP() {
+    document.getElementById('overlayPP').style.display = 'none';
+}
+
+
+
 // Создаем инлайн клавиатуру с кнопкой "Открыть чат с оператором"
 const keyboard = {
     inline_keyboard: [
