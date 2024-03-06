@@ -379,49 +379,43 @@ body {
     display: none;
     justify-content: center; /* Выравнивание по горизонтали */
     align-items: center;
+    text-align: center;
     background: #ffffff;
-    min-height: 100vh;
 }
 
 .clothes {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(100px, 1fr);
     width: 100%;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
-
-.ячейка {
-    justify-content: center;
-    border-radius: 20px; /* Скругленные углы кнопки */
-    margin-top: 30px;
-    padding-top: 1px;
-    /* From https://css.glass */
-    background: rgba(95, 95, 95, 0.52);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.7px);
-    -webkit-backdrop-filter: blur(4.7px);
-    border: 1px solid rgba(255, 255, 255, 0.29);
-}
-
-.рамка {
-    width: auto;
-    border-radius: 20px; /* Скругленные углы кнопки */
-    background: #dadada;
-    margin: 10px;
-    padding: 10px;
+.cloth {
+    width: 100%;
 }
 
 .imgclothes {
-    width: 100%;
+    width: 90%;
+}
+
+.прайс {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    
+    margin-bottom: 3px; /* Отступ снизу */
+    text-align: center;
 }
 
 .купить {
     width: 90%;
-    height: 60px;
+    height: 40px;
     padding: 10px 10px;
     background-color:#ffffff;
     color: rgb(0, 0, 0);
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     font-weight: bold; /* Делаем текст жирным */
 
 
@@ -668,28 +662,6 @@ body {
     box-shadow: inset 1px 1px 5px #e1e1e1, inset 1px 1px #e9e9e9;
     transform: translateY(2px);
     opacity: 0.5;
-}
-
-.купить {
-    width: 100%;
-    height: 60px;
-    padding: 10px 10px;
-    background-color:#ffffff;
-    color: rgb(0, 0, 0);
-    margin-top: 15px;
-    font-weight: bold; /* Делаем текст жирным */
-
-
-    border-radius: 20px;
-    border: none;
-    
-    box-shadow: inset -1px -1px 20px #d4d4d4, inset -1px -1px 10px #d4d4d4, 1px 1px 12px #d4d4d4,  1px 1px 12px #d4d4d4;
-}
-
-.купить:active {
-    color: #666;
-    box-shadow: inset 1px 1px 5px #e1e1e1, inset 1px 1px #e9e9e9;
-    transform: translateY(2px);
 }
 
 
