@@ -653,7 +653,7 @@ order2.addEventListener("click", (event) => {
         const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора";
+        tg.MainButton.text = "Оплатить  через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
@@ -830,7 +830,7 @@ order4.addEventListener("click", (event) => {
         const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора";
+        tg.MainButton.text = "Оплатить  через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
@@ -1145,7 +1145,7 @@ order7.addEventListener("click", (event) => {
         const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора";
+        tg.MainButton.text = "Оплатить  через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
@@ -2381,7 +2381,7 @@ order21.addEventListener("click", (event) => {
         const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
         
         // Обновляем текст и видимость кнопки MainButton
-        tg.MainButton.text = "Оплатить оператора";
+        tg.MainButton.text = "Оплатить  через оператора";
         tg.MainButton.show();
         
         // Сохраняем выбранные данные для передачи боту
