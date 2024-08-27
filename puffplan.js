@@ -35,6 +35,8 @@ let form25 = document.getElementById("form25");
 let form26 = document.getElementById("form26");
 let form27 = document.getElementById("form27");
 let form28 = document.getElementById("form28");
+let form29 = document.getElementById("form29");
+let form30 = document.getElementById("form30");
 let btn1 = document.getElementById("btn1");
 let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
@@ -63,6 +65,8 @@ let btn25 = document.getElementById("btn25");
 let btn26 = document.getElementById("btn26");
 let btn27 = document.getElementById("btn27");
 let btn28 = document.getElementById("btn28");
+let btn29 = document.getElementById("btn29");
+let btn30 = document.getElementById("btn30");
 let homeContent = document.getElementById("thepuffercase");
 let order1 = document.getElementById("order1");
 let order2 = document.getElementById("order2");
@@ -92,6 +96,8 @@ let order25 = document.getElementById("order25");
 let order26 = document.getElementById("order26");
 let order27 = document.getElementById("order27");
 let order28 = document.getElementById("order28");
+let order29 = document.getElementById("order29");
+let order30 = document.getElementById("order30");
 let selectedModel = ""; // Для хранения выбранной модели
 let selectedRazmer = ""; // Для хранения выбранной модели
 let selectedPrice = ""; // Для хранения выбранной цены
@@ -124,6 +130,8 @@ let priceElementForm25 = document.querySelector(".price25");
 let priceElementForm26 = document.querySelector(".price26");
 let priceElementForm27 = document.querySelector(".price27");
 let priceElementForm28 = document.querySelector(".price28");
+let priceElementForm29 = document.querySelector(".price29");
+let priceElementForm30 = document.querySelector(".price30");
 
 const backButton = Telegram.WebApp.BackButton;
 
@@ -3031,6 +3039,192 @@ order28.addEventListener("click", (event) => {
     }   
 });
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+
+//товар29zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+btn29.addEventListener("click", () => {
+    document.getElementById("thepuffercase").style.display = "none";
+    document.getElementById("form29").style.display = "block";
+
+    // Делаем кнопку "order2" неактивной
+    order29.orderinactive = true;
+    order29.classList.add("orderinactive");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("thepuffercase").style.display = "block";
+        document.getElementById("form29").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+
+model1.forEach(model => {
+    model.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
+        selectedModel = model.textContent;
+        selectedPrice = modelInfo1[selectedModel];
+
+        // Удаляем границу у всех кнопок
+        model1.forEach(btn => {
+            btn.classList.remove("selected");
+            btn.style.border = "none";
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        model.classList.add("selected");
+                    
+        // Обновляем стиль выбранной кнопки
+        model.style.border = "1px solid black";
+
+        order29.orderinactive = false;
+        order29.classList.remove("orderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementForm29.textContent = selectedPrice;
+                    
+        selectedModel = model.textContent;
+    });
+});
+
+
+
+// Добавьте обработчик события click для кнопки "Add"
+order29.disabled = false;
+order29.addEventListener("click", (event) => {
+    if (!order29.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE PUFFER CASE-DRAMA";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+
+
+//товар30zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+btn30.addEventListener("click", () => {
+    document.getElementById("thepuffercase").style.display = "none";
+    document.getElementById("form30").style.display = "block";
+
+    // Делаем кнопку "order2" неактивной
+    order30.orderinactive = true;
+    order30.classList.add("orderinactive");
+
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("thepuffercase").style.display = "block";
+        document.getElementById("form30").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+
+model1.forEach(model => {
+    model.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+                    
+        selectedModel = model.textContent;
+        selectedPrice = modelInfo1[selectedModel];
+
+        // Удаляем границу у всех кнопок
+        model1.forEach(btn => {
+            btn.classList.remove("selected");
+            btn.style.border = "none";
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        model.classList.add("selected");
+                    
+        // Обновляем стиль выбранной кнопки
+        model.style.border = "1px solid black";
+
+        order30.orderinactive = false;
+        order30.classList.remove("orderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementForm30.textContent = selectedPrice;
+                    
+        selectedModel = model.textContent;
+    });
+});
+
+
+
+// Добавьте обработчик события click для кнопки "Add"
+order30.disabled = false;
+order30.addEventListener("click", (event) => {
+    if (!order30.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedModel = document.querySelector(".model1.selected").textContent;
+        const selectedPrice = modelInfo1[selectedModel];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "250₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE PUFFER CASE-DEMON";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Модель телефона: ${selectedModel}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz//
+
+
+
 
 const modelInfo1 = {
     "iPhone 15 Pro Max": "2099₽",
