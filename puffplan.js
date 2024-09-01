@@ -251,10 +251,158 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+function calculateTotalPrice(selectedPrice, deliveryPrice) {
+    // Логика вычисления общей цены
+    return parseFloat(selectedPrice) + parseFloat(deliveryPrice);
+}
+
+
+const razmerInfo1 = {
+    "S": "2290₽",
+    "M": "2290₽",
+    "L": "2290₽",
+};
+
+
+const razmerInfo2 = {
+    "S": "4990₽",
+    "M": "4990₽",
+    "L": "4990₽",
+    "XL": "4990₽",
+};
+
+
+
+const razmerInfo3 = {
+    "S": "3990₽",
+    "M": "3990₽",
+    "L": "3990₽",
+    "XL": "3990₽",
+};
+
+
+const modelInfo1 = {
+    "iPhone 15 Pro Max": "2099₽",
+    "iPhone 15 Pro": "1899₽",
+    "iPhone 15 Plus": "2099₽",
+    "iPhone 15": "1899₽",
+    "iPhone 14 Pro Max": "2099₽",
+    "iPhone 14 Pro": "1899₽",
+    "iPhone 14 Plus": "2099₽",
+    "iPhone 14": "1899₽",
+    "iPhone 13 Pro Max": "2099₽",
+    "iPhone 13 Pro": "1899₽",
+    "iPhone 13": "1899₽",
+    "iPhone 13 mini": "1899₽",
+    "iPhone 12 Pro Max": "2099₽",
+    "iPhone 12/12 Pro": "1899₽",
+    "iPhone 12 mini": "1899₽",
+    "iPhone 11 Pro Max": "2099₽",
+    "iPhone 11 Pro": "1899₽",
+    "iPhone 11": "1899₽",
+    "iPhone Xs Max": "1899₽",
+    "iPhone Xr": "1699₽",
+    "iPhone X/Xs": "1699₽",
+    "iPhone 8 Plus/7 Plus": "1699₽",
+    "iPhone 6/7/8/SE20": "1699₽",
+};
+
+
+const modelInfo2 = {
+    "iPhone 14 Pro Max": "1099₽",
+    "iPhone 14 Pro": "999₽",
+    "iPhone 14 Plus": "1099₽",
+    "iPhone 14": "999₽",
+    "iPhone 13 Pro Max": "1099₽",
+    "iPhone 13 Pro": "999₽",
+    "iPhone 13": "999₽",
+    "iPhone 12 Pro Max": "1099₽",
+    "iPhone 12 Pro": "999₽",
+    "iPhone 12": "999₽",
+    "iPhone 11 Pro Max": "1099₽",
+    "iPhone 11 Pro": "999₽",
+    "iPhone 11": "999₽",
+    "iPhone Xs Max": "1099₽",
+    "iPhone Xr": "999₽",
+    "iPhone X/Xs": "999₽",
+};
+
+
+const modelInfo3 = {
+    "iPhone 13 Pro Max": "1899₽",
+    "iPhone 13 Pro": "1699₽",
+    "iPhone 13": "1699₽",
+    "iPhone 12 Pro Max": "1899₽",
+    "iPhone 12/12 Pro": "1699₽",
+    "iPhone 11": "1699₽",
+};
+
+
+const modelInfo4 = {
+    "AirPods 1/2": "999₽",
+    "AirPods Pro/Pro(2)": "999₽",
+    "AirPods 3": "999₽",
+};
+
+
+const modelcomplInfo5 = {
+    "iPhone 15 Pro Max": "1890₽",
+    "iPhone 15 Pro": "1710₽",
+    "iPhone 15 Plus": "1890₽",
+    "iPhone 15": "1710₽",
+    "iPhone 14 Pro Max": "1890₽",
+    "iPhone 14 Pro": "1710₽",
+    "iPhone 14 Plus": "1890₽",
+    "iPhone 14": "1710₽",
+    "iPhone 13 Pro Max": "1890₽",
+    "iPhone 13 Pro": "1710₽",
+    "iPhone 13": "1710₽",
+    "iPhone 13 mini": "1710₽",
+    "iPhone 12 Pro Max": "1890₽",
+    "iPhone 12/12 Pro": "1710₽",
+    "iPhone 12 mini": "1710₽",
+    "iPhone 11 Pro Max": "1890₽",
+    "iPhone 11 Pro": "1710₽",
+    "iPhone 11": "1710₽",
+    "iPhone Xs Max": "1710₽",
+    "iPhone Xr": "1530₽",
+    "iPhone X/Xs": "1530₽",
+    "iPhone 8 Plus/7 Plus": "1530₽",
+    "iPhone 6/7/8/SE20": "1530₽",
+};
+const modelcomplairInfo6 = {
+    "AirPods 1/2": "899₽",
+    "AirPods Pro/Pro(2)": "899₽",
+    "AirPods 3": "899₽",
+};
+
+
+
+
+
+
+
+
+
+
+
+
 const купить1 = document.getElementById("купить1");
+const купить2 = document.getElementById("купить2");
+const купить3 = document.getElementById("купить3");
+const купить4 = document.getElementById("купить4");
+const купить5 = document.getElementById("купить5");
 const pufforder1 = document.getElementById("pufforder1");
+const pufforder2 = document.getElementById("pufforder2");
+const pufforder3 = document.getElementById("pufforder3");
+const pufforder4 = document.getElementById("pufforder4");
+const pufforder5 = document.getElementById("pufforder5");
 let razmer1 = document.querySelectorAll(".razmer1");
-let priceElementFormplan = document.querySelector(".цена1");
+let razmer2 = document.querySelectorAll(".razmer2");
+let razmer3 = document.querySelectorAll(".razmer3");
+let priceElementFormplan1 = document.querySelector(".цена1");
+let priceElementFormplan2 = document.querySelector(".цена2");
+let priceElementFormplan3 = document.querySelector(".цена3");
 
 function openSetkaWindow() {
     document.getElementById("setkaOverlay").style.display = "block"
@@ -265,6 +413,8 @@ function closeSetka() {
     const setkaOverlay = document.getElementById("setkaOverlay");
     setkaOverlay.style.display = "none";
 }
+
+
 
 купить1.addEventListener("click", () => {
     document.getElementById("pufferplanet").style.display = "none"
@@ -304,7 +454,7 @@ razmer1.forEach(razmer => {
         pufforder1.classList.remove("pufforderinactive");
 
         priceElement.textContent = selectedPrice;
-        priceElementFormplan.textContent = selectedPrice;
+        priceElementFormplan1.textContent = selectedPrice;
 
         selectedRazmer = razmer.textContent;
     });
@@ -349,21 +499,342 @@ pufforder1.addEventListener("click", (event) => {
     }   
 });
 
-const razmerInfo1 = {
-    "S": "2290₽",
-    "M": "2290₽",
-    "L": "2290₽",
-};
 
 
 
+купить2.addEventListener("click", () => {
+    document.getElementById("pufferplanet").style.display = "none"
+    document.getElementById("formplanet2").style.display = "block"
+
+    // Делаем кнопку "pufforder2" неактивной
+    pufforder2.pufforderinactive = true;
+    pufforder2.classList.add("pufforderinactive");
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("pufferplanet").style.display = "block";
+        document.getElementById("formplanet2").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+razmer2.forEach(razmer => {
+    razmer.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
 
 
+        selectedRazmer = razmer.textContent;
+        selectedPrice = razmerInfo2[selectedRazmer];
+
+        // Удаляем границу у всех кнопок
+        razmer2.forEach(btn => {
+            btn.classList.remove("razmer2active");
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        razmer.classList.add("razmer2active");
 
 
+        pufforder2.pufforderinactive = false;
+        pufforder2.classList.remove("pufforderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementFormplan2.textContent = selectedPrice;
+
+        selectedRazmer = razmer.textContent;
+    });
+});
+
+console.log(tg)
+// Добавьте обработчик события click для кнопки "Add"
+pufforder2.disabled = false;
+pufforder2.addEventListener("click", (event) => {
+    if (!pufforder2.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedRazmer = document.querySelector(".razmer2.razmer2active").textContent;
+        const selectedPrice = razmerInfo2[selectedRazmer];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "400₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE ZIP HOODIE - BLACK";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Размер: ${selectedRazmer}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
 
 
+купить3.addEventListener("click", () => {
+    document.getElementById("pufferplanet").style.display = "none"
+    document.getElementById("formplanet3").style.display = "block"
 
+    // Делаем кнопку "pufforder3" неактивной
+    pufforder3.pufforderinactive = true;
+    pufforder3.classList.add("pufforderinactive");
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("pufferplanet").style.display = "block";
+        document.getElementById("formplanet3").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+razmer2.forEach(razmer => {
+    razmer.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+
+
+        selectedRazmer = razmer.textContent;
+        selectedPrice = razmerInfo2[selectedRazmer];
+
+        // Удаляем границу у всех кнопок
+        razmer2.forEach(btn => {
+            btn.classList.remove("razmer2active");
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        razmer.classList.add("razmer2active");
+
+
+        pufforder3.pufforderinactive = false;
+        pufforder3.classList.remove("pufforderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementFormplan2.textContent = selectedPrice;
+
+        selectedRazmer = razmer.textContent;
+    });
+});
+
+console.log(tg)
+// Добавьте обработчик события click для кнопки "Add"
+pufforder3.disabled = false;
+pufforder3.addEventListener("click", (event) => {
+    if (!pufforder3.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedRazmer = document.querySelector(".razmer2.razmer2active").textContent;
+        const selectedPrice = razmerInfo2[selectedRazmer];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "400₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "THE ZIP HOODIE - WHITE";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Размер: ${selectedRazmer}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
+
+купить4.addEventListener("click", () => {
+    document.getElementById("pufferplanet").style.display = "none"
+    document.getElementById("formplanet4").style.display = "block"
+
+    // Делаем кнопку "pufforder4" неактивной
+    pufforder4.pufforderinactive = true;
+    pufforder4.classList.add("pufforderinactive");
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("pufferplanet").style.display = "block";
+        document.getElementById("formplanet4").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+razmer3.forEach(razmer => {
+    razmer.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+
+
+        selectedRazmer = razmer.textContent;
+        selectedPrice = razmerInfo3[selectedRazmer];
+
+        // Удаляем границу у всех кнопок
+        razmer3.forEach(btn => {
+            btn.classList.remove("razmer3active");
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        razmer.classList.add("razmer3active");
+
+
+        pufforder4.pufforderinactive = false;
+        pufforder4.classList.remove("pufforderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementFormplan3.textContent = selectedPrice;
+
+        selectedRazmer = razmer.textContent;
+    });
+});
+
+console.log(tg)
+// Добавьте обработчик события click для кнопки "Add"
+pufforder4.disabled = false;
+pufforder4.addEventListener("click", (event) => {
+    if (!pufforder4.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedRazmer = document.querySelector(".razmer3.razmer3active").textContent;
+        const selectedPrice = razmerInfo3[selectedRazmer];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "400₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "PANTS - BLACK";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Размер: ${selectedRazmer}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
+
+
+купить5.addEventListener("click", () => {
+    document.getElementById("pufferplanet").style.display = "none"
+    document.getElementById("formplanet5").style.display = "block"
+
+    // Делаем кнопку "pufforder5" неактивной
+    pufforder5.pufforderinactive = true;
+    pufforder5.classList.add("pufforderinactive");
+    backButton.show();
+
+    backButton.onClick(() => {
+        document.getElementById("pufferplanet").style.display = "block";
+        document.getElementById("formplanet5").style.display = "none";
+        tg.MainButton.hide();
+        backButton.hide();
+    });
+});
+
+razmer3.forEach(razmer => {
+    razmer.addEventListener("click", (event) => {
+        event.preventDefault(); // Предотвращаем действие по умолчанию (например, переход по ссылке)
+
+
+        selectedRazmer = razmer.textContent;
+        selectedPrice = razmerInfo3[selectedRazmer];
+
+        // Удаляем границу у всех кнопок
+        razmer3.forEach(btn => {
+            btn.classList.remove("razmer3active");
+        });
+
+        // Добавляем класс selected к выбранной кнопке
+        razmer.classList.add("razmer3active");
+
+
+        pufforder5.pufforderinactive = false;
+        pufforder5.classList.remove("pufforderinactive");
+
+        priceElement.textContent = selectedPrice;
+        priceElementFormplan3.textContent = selectedPrice;
+
+        selectedRazmer = razmer.textContent;
+    });
+});
+
+console.log(tg)
+// Добавьте обработчик события click для кнопки "Add"
+pufforder5.disabled = false;
+pufforder5.addEventListener("click", (event) => {
+    if (!pufforder5.disabled) {
+        event.preventDefault();
+        
+        // Получаем выбранную модель и цену
+        const selectedRazmer = document.querySelector(".razmer3.razmer3active").textContent;
+        const selectedPrice = razmerInfo3[selectedRazmer];
+
+        // Вычисляем общую цену
+        const deliveryPrice = "400₽";
+        const totalPrice = calculateTotalPrice(selectedPrice, deliveryPrice);
+        
+        // Обновляем текст и видимость кнопки MainButton
+        tg.MainButton.text = "Оплатить через оператора";
+        tg.MainButton.show();
+        
+        // Сохраняем выбранные данные для передачи боту
+        const itemName = "PANTS - WHITE";
+        const instructionMessage = 'Скопируйте ваш заказ ниже и отправьте в чат с оператором';
+        const message = `
+            Заказ: ${itemName}
+            Размер: ${selectedRazmer}
+            Цена: ${selectedPrice}
+            Доставка: ${deliveryPrice}
+            Общая цена: ${totalPrice}
+        `;
+        // Добавьте обработчик для кнопки MainButton
+        tg.MainButton.onClick(async () => {
+            await sendMessageToBot(instructionMessage);
+            await sendMessageToBotWithKeyboard(message, keyboard);
+            
+            tg.close();
+        });
+    }   
+});
 
 
 
@@ -3226,100 +3697,9 @@ order30.addEventListener("click", (event) => {
 
 
 
-const modelInfo1 = {
-    "iPhone 15 Pro Max": "2099₽",
-    "iPhone 15 Pro": "1899₽",
-    "iPhone 15 Plus": "2099₽",
-    "iPhone 15": "1899₽",
-    "iPhone 14 Pro Max": "2099₽",
-    "iPhone 14 Pro": "1899₽",
-    "iPhone 14 Plus": "2099₽",
-    "iPhone 14": "1899₽",
-    "iPhone 13 Pro Max": "2099₽",
-    "iPhone 13 Pro": "1899₽",
-    "iPhone 13": "1899₽",
-    "iPhone 13 mini": "1899₽",
-    "iPhone 12 Pro Max": "2099₽",
-    "iPhone 12/12 Pro": "1899₽",
-    "iPhone 12 mini": "1899₽",
-    "iPhone 11 Pro Max": "2099₽",
-    "iPhone 11 Pro": "1899₽",
-    "iPhone 11": "1899₽",
-    "iPhone Xs Max": "1899₽",
-    "iPhone Xr": "1699₽",
-    "iPhone X/Xs": "1699₽",
-    "iPhone 8 Plus/7 Plus": "1699₽",
-    "iPhone 6/7/8/SE20": "1699₽",
-};
 
 
-const modelInfo2 = {
-    "iPhone 14 Pro Max": "1099₽",
-    "iPhone 14 Pro": "999₽",
-    "iPhone 14 Plus": "1099₽",
-    "iPhone 14": "999₽",
-    "iPhone 13 Pro Max": "1099₽",
-    "iPhone 13 Pro": "999₽",
-    "iPhone 13": "999₽",
-    "iPhone 12 Pro Max": "1099₽",
-    "iPhone 12 Pro": "999₽",
-    "iPhone 12": "999₽",
-    "iPhone 11 Pro Max": "1099₽",
-    "iPhone 11 Pro": "999₽",
-    "iPhone 11": "999₽",
-    "iPhone Xs Max": "1099₽",
-    "iPhone Xr": "999₽",
-    "iPhone X/Xs": "999₽",
-};
 
-
-const modelInfo3 = {
-    "iPhone 13 Pro Max": "1899₽",
-    "iPhone 13 Pro": "1699₽",
-    "iPhone 13": "1699₽",
-    "iPhone 12 Pro Max": "1899₽",
-    "iPhone 12/12 Pro": "1699₽",
-    "iPhone 11": "1699₽",
-};
-
-
-const modelInfo4 = {
-    "AirPods 1/2": "999₽",
-    "AirPods Pro/Pro(2)": "999₽",
-    "AirPods 3": "999₽",
-};
-
-
-const modelcomplInfo5 = {
-    "iPhone 15 Pro Max": "1890₽",
-    "iPhone 15 Pro": "1710₽",
-    "iPhone 15 Plus": "1890₽",
-    "iPhone 15": "1710₽",
-    "iPhone 14 Pro Max": "1890₽",
-    "iPhone 14 Pro": "1710₽",
-    "iPhone 14 Plus": "1890₽",
-    "iPhone 14": "1710₽",
-    "iPhone 13 Pro Max": "1890₽",
-    "iPhone 13 Pro": "1710₽",
-    "iPhone 13": "1710₽",
-    "iPhone 13 mini": "1710₽",
-    "iPhone 12 Pro Max": "1890₽",
-    "iPhone 12/12 Pro": "1710₽",
-    "iPhone 12 mini": "1710₽",
-    "iPhone 11 Pro Max": "1890₽",
-    "iPhone 11 Pro": "1710₽",
-    "iPhone 11": "1710₽",
-    "iPhone Xs Max": "1710₽",
-    "iPhone Xr": "1530₽",
-    "iPhone X/Xs": "1530₽",
-    "iPhone 8 Plus/7 Plus": "1530₽",
-    "iPhone 6/7/8/SE20": "1530₽",
-};
-const modelcomplairInfo6 = {
-    "AirPods 1/2": "899₽",
-    "AirPods Pro/Pro(2)": "899₽",
-    "AirPods 3": "899₽",
-};
 
 
 const swiper = new Swiper('.swiper-container', {

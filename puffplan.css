@@ -5,19 +5,18 @@ body {
     color: white;
     background-color: #ffffff;
     min-height: 100vh;
-    font-weight: 400px;
+    font-weight: 400;
     display: flex;
     justify-content: center; /* Выравнивание по горизонтали */
-    align-items: center; /* Выравнивание по вертикали */
     align-items: flex-start;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+
 @font-face {
     font-family: 'nanum-pen-regular';
-    src: url('fonts/nanum-pen-regular.ttf') format('ttf');
+    src: url('fonts/nanum-pen-regular.ttf') format('truetype');
 }
-
 
 /* Стили для контейнера, содержащего кнопки */
 .contain {
@@ -447,7 +446,7 @@ body {
 }
 
 .nameclothes {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 12px;
     color: rgb(160, 160, 160);
     word-wrap: break-word; /* Обрыв длинных слов */
@@ -551,6 +550,22 @@ body {
 }
 
 .цена1 {
+    color: rgb(5, 5, 5);
+    text-align: left;
+    font-size: 14px;
+    margin-top: 1px;
+    font-weight: bold;
+}
+
+.цена2 {
+    color: rgb(5, 5, 5);
+    text-align: left;
+    font-size: 14px;
+    margin-top: 1px;
+    font-weight: bold;
+}
+
+.цена3 {
     color: rgb(5, 5, 5);
     text-align: left;
     font-size: 14px;
@@ -664,6 +679,57 @@ body {
     opacity: 0.5;
 }
 
+.razmer2 {
+    width: 60px;
+    height: 30px;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    background-color:#ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold; /* Делаем текст жирным */
+
+
+    border: none;
+    
+    box-shadow: inset -1px -1px 20px #d4d4d4, inset -1px -1px 10px #d4d4d4, 1px 1px 12px #d4d4d4,  1px 1px 12px #d4d4d4;
+}
+
+.razmer2active {
+    color: #666;
+    box-shadow: inset 1px 1px 5px #e1e1e1, inset 1px 1px #e9e9e9;
+    transform: translateY(2px);
+    opacity: 0.5;
+}
+
+.razmer3 {
+    width: 60px;
+    height: 30px;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    background-color:#ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold; /* Делаем текст жирным */
+
+
+    border: none;
+    
+    box-shadow: inset -1px -1px 20px #d4d4d4, inset -1px -1px 10px #d4d4d4, 1px 1px 12px #d4d4d4,  1px 1px 12px #d4d4d4;
+}
+
+.razmer3active {
+    color: #666;
+    box-shadow: inset 1px 1px 5px #e1e1e1, inset 1px 1px #e9e9e9;
+    transform: translateY(2px);
+    opacity: 0.5;
+}
 
 #gallery {
     display: flex;
